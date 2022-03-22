@@ -1,0 +1,104 @@
+﻿@{ 
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.rtl.min.css">
+
+    <style>
+        html,
+        body {
+
+            width: 100%;
+            font-family: vazire;
+            height: 100vh;
+        }
+        @@font-face {
+            font-family: "mistral";
+            src: url(/MISTRAL.TTF);
+            font-family: "vazire";
+            src: url(Vazir.ttf);
+        }
+          .ui-autocomplete {
+            max-height: 150px;
+            overflow-y: auto;
+            /* prevent horizontal scrollbar */
+            overflow-x: hidden;
+            /* add padding to account for vertical scrollbar */
+            padding-right: 20px;
+        }
+     /*   .navbar {
+            position: absolute;
+            top: 0;
+            z-index: 1;
+            display: flex;
+            width: 100%;
+            height: 60px;
+            background-color: #02060c0e;
+            color: #fff;
+        }
+
+            .navbar ul {
+                display: flex;
+                list-style: none;
+                width: 100%;
+                align-items: center;
+            }
+
+
+                .navbar ul li a {
+                    text-decoration: none;
+                    text-transform: uppercase;
+                    color: #f4f4f4;
+                }
+
+                    .navbar ul li a :hover {
+                        color: skyblue;
+                    }*/
+    </style>
+</head>
+
+<body>
+    @*<nav class="navbar">
+        <ul>
+            <li><img src="test1.png" style="width: 15%;"></li>
+            <li><a asp-action="LeaksData" asp-controller="Home">back to home</a> </li>
+
+        </ul>
+    </nav>*@
+
+    <div class="container-fluid  h-100 d-flex flex-column justify-content-center align-items-center" style="background-image: linear-gradient(to right, #fbbc05 , #e3ff00);">
+        <div style="width: 50%; display: flex; flex-direction: column; justify-content: center;">
+            <img src="~/GalleryFiles/logo.png" style="margin: 0 auto;" width="150px" height="150px" alt="">
+            <h2 style="color: black; font-size: 1.5rem; text-align: center;">موتور جستجوری هوشمند درون شهری انبه</h2>
+            <form method="post" asp-action="Index">
+            <div class="input-group mb-3 mt-3">
+                <span class="input-group-text" id="basic-addon1">&#x1F50D</span>
+                                  <input type="text" name="pname" class="form-control" id="productName" placeholder="جستجو" aria-describedby="basic-addonl">
+            </div>
+            </form>
+
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $("#productName").autocomplete({
+            source: 'api/SearchApi/search'
+            
+        });
+    });
+    </script>
+</body>
+
+</html>

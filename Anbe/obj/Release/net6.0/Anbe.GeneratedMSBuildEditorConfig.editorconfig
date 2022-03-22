@@ -1,0 +1,172 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = Anbe
+build_property.RootNamespace = Anbe
+build_property.ProjectDir = C:\Users\milad\Desktop\Anbe\Anbe\Anbe\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = true
+build_property.MSBuildProjectDirectory = C:\Users\milad\Desktop\Anbe\Anbe\Anbe
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/milad/Desktop/Anbe/Anbe/Anbe/Areas/AnbeAdmin/Views/Categories/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQW5iZUFkbWluXFZpZXdzXENhdGVnb3JpZXNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/milad/Desktop/Anbe/Anbe/Anbe/Areas/AnbeAdmin/Views/Categories/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQW5iZUFkbWluXFZpZXdzXENhdGVnb3JpZXNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/milad/Desktop/Anbe/Anbe/Anbe/Areas/AnbeAdmin/Views/Categories/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQW5iZUFkbWluXFZpZXdzXENhdGVnb3JpZXNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/milad/Desktop/Anbe/Anbe/Anbe/Areas/AnbeAdmin/Views/Categories/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQW5iZUFkbWluXFZpZXdzXENhdGVnb3JpZXNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/milad/Desktop/Anbe/Anbe/Anbe/Areas/AnbeAdmin/Views/Categories/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQW5iZUFkbWluXFZpZXdzXENhdGVnb3JpZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/milad/Desktop/Anbe/Anbe/Anbe/Areas/AnbeAdmin/Views/Color/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQW5iZUFkbWluXFZpZXdzXENvbG9yXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/milad/Desktop/Anbe/Anbe/Anbe/Areas/AnbeAdmin/Views/Color/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQW5iZUFkbWluXFZpZXdzXENvbG9yXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/milad/Desktop/Anbe/Anbe/Anbe/Areas/AnbeAdmin/Views/DasteBandiKolli/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQW5iZUFkbWluXFZpZXdzXERhc3RlQmFuZGlLb2xsaVxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/milad/Desktop/Anbe/Anbe/Anbe/Areas/AnbeAdmin/Views/DasteBandiKolli/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQW5iZUFkbWluXFZpZXdzXERhc3RlQmFuZGlLb2xsaVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/milad/Desktop/Anbe/Anbe/Anbe/Areas/AnbeAdmin/Views/Products/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQW5iZUFkbWluXFZpZXdzXFByb2R1Y3RzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/milad/Desktop/Anbe/Anbe/Anbe/Areas/AnbeAdmin/Views/Products/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQW5iZUFkbWluXFZpZXdzXFByb2R1Y3RzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/milad/Desktop/Anbe/Anbe/Anbe/Areas/AnbeAdmin/Views/Products/FileUploader.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQW5iZUFkbWluXFZpZXdzXFByb2R1Y3RzXEZpbGVVcGxvYWRlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/milad/Desktop/Anbe/Anbe/Anbe/Areas/AnbeAdmin/Views/Products/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQW5iZUFkbWluXFZpZXdzXFByb2R1Y3RzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/milad/Desktop/Anbe/Anbe/Anbe/Areas/AnbeAdmin/Views/Products/_SubCategories.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQW5iZUFkbWluXFZpZXdzXFByb2R1Y3RzXF9TdWJDYXRlZ29yaWVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/milad/Desktop/Anbe/Anbe/Anbe/Areas/AnbeAdmin/Views/UserManager/AddWalletCart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQW5iZUFkbWluXFZpZXdzXFVzZXJNYW5hZ2VyXEFkZFdhbGxldENhcnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/milad/Desktop/Anbe/Anbe/Anbe/Areas/AnbeAdmin/Views/UserManager/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQW5iZUFkbWluXFZpZXdzXFVzZXJNYW5hZ2VyXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/milad/Desktop/Anbe/Anbe/Anbe/Areas/AnbeAdmin/Views/UserManager/UserManagerEdit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQW5iZUFkbWluXFZpZXdzXFVzZXJNYW5hZ2VyXFVzZXJNYW5hZ2VyRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/milad/Desktop/Anbe/Anbe/Anbe/Areas/Identity/Pages/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/milad/Desktop/Anbe/Anbe/Anbe/Areas/Identity/Pages/Account/Logout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/milad/Desktop/Anbe/Anbe/Anbe/Areas/Identity/Pages/Account/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/milad/Desktop/Anbe/Anbe/Anbe/Areas/Identity/Pages/Account/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxfVmlld0ltcG9ydHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/milad/Desktop/Anbe/Anbe/Anbe/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZhbGlkYXRpb25TY3JpcHRzUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/milad/Desktop/Anbe/Anbe/Anbe/Areas/Identity/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/milad/Desktop/Anbe/Anbe/Anbe/Areas/Identity/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/milad/Desktop/Anbe/Anbe/Anbe/Views/Home/FirstPage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxGaXJzdFBhZ2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/milad/Desktop/Anbe/Anbe/Anbe/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/milad/Desktop/Anbe/Anbe/Anbe/Views/Home/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/milad/Desktop/Anbe/Anbe/Anbe/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/milad/Desktop/Anbe/Anbe/Anbe/Views/Home/Test.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxUZXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/milad/Desktop/Anbe/Anbe/Anbe/Views/RegisterSuper/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVnaXN0ZXJTdXBlclxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/milad/Desktop/Anbe/Anbe/Anbe/Views/Shared/Components/GetMenu/GetMenu.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcR2V0TWVudVxHZXRNZW51LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/milad/Desktop/Anbe/Anbe/Anbe/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/milad/Desktop/Anbe/Anbe/Anbe/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/milad/Desktop/Anbe/Anbe/Anbe/Views/Shared/_LayoutPage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRQYWdlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/milad/Desktop/Anbe/Anbe/Anbe/Views/Shared/_LoginPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/milad/Desktop/Anbe/Anbe/Anbe/Views/Shared/_MymasterLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9NeW1hc3RlckxheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/milad/Desktop/Anbe/Anbe/Anbe/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/milad/Desktop/Anbe/Anbe/Anbe/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/milad/Desktop/Anbe/Anbe/Anbe/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 

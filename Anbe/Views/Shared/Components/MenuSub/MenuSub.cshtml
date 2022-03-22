@@ -1,0 +1,23 @@
+﻿@model IEnumerable<Anbe.Models.Category>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    Layout = null;
+    
+}
+@foreach (var item in Model)
+{
+   
+                                          <li class="menu-mega-item menu-item-type-mega-menu item-small">
+                                            <a asp-action="index" asp-route-cat="@item.CategoryID" class="mega-menu-link">
+                                                @item.CategoryName
+                                            </a>
+                                        </li>
+                                        
+                                        
+                                
+                                        
+                                 
+
+}
+        

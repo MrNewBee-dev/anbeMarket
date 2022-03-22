@@ -1,0 +1,19 @@
+﻿@model IEnumerable<Anbe.Models.Category>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    Layout = null;
+    
+}
+@foreach (var item in Model)
+{
+    <div class="form-auth-row"> 
+             <label  class="ui-checkbox">
+             <input type="checkbox" value="@item.CategoryID" name="cat" id="remember">
+             <span class="ui-checkbox-check"></span>
+             </label>
+             <label for="remember" class="remember-me">@item.CategoryName</label>
+     </div>
+
+}
+        
