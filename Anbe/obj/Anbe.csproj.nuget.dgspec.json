@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\milad\\Desktop\\Anbe\\Anbe\\Anbe\\Anbe.csproj": {}
+    "C:\\Users\\milad\\Desktop\\test\\anbeMarket\\Anbe\\Anbe.csproj": {}
   },
   "projects": {
-    "C:\\Users\\milad\\Desktop\\Anbe\\Anbe\\Anbe\\Anbe.csproj": {
+    "C:\\Users\\milad\\Desktop\\test\\anbeMarket\\Anbe\\Anbe.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\milad\\Desktop\\Anbe\\Anbe\\Anbe\\Anbe.csproj",
+        "projectUniqueName": "C:\\Users\\milad\\Desktop\\test\\anbeMarket\\Anbe\\Anbe.csproj",
         "projectName": "Anbe",
-        "projectPath": "C:\\Users\\milad\\Desktop\\Anbe\\Anbe\\Anbe\\Anbe.csproj",
+        "projectPath": "C:\\Users\\milad\\Desktop\\test\\anbeMarket\\Anbe\\Anbe.csproj",
         "packagesPath": "C:\\Users\\milad\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\milad\\Desktop\\Anbe\\Anbe\\Anbe\\obj\\",
+        "outputPath": "C:\\Users\\milad\\Desktop\\test\\anbeMarket\\Anbe\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -53,6 +53,10 @@
               "version": "[6.0.3, )"
             },
             "Microsoft.AspNetCore.Identity.UI": {
+              "target": "Package",
+              "version": "[6.0.3, )"
+            },
+            "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": {
               "target": "Package",
               "version": "[6.0.3, )"
             },

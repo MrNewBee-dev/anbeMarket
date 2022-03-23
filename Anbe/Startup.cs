@@ -1,5 +1,6 @@
 using Anbe.Areas.API.Service;
 using Anbe.Areas.Identity.Data.Services;
+using Anbe.Hubs;
 using BookShop.Areas.Identity.Services;
 using BookShop.Models.Repository;
 using Microsoft.AspNetCore.Authentication.Cookies;
@@ -29,11 +30,12 @@ namespace Anbe
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllersWithViews();
+          var mvcBuilder =   services.AddControllersWithViews();
+            mvcBuilder.AddRazorRuntimeCompilation();
             services.AddRazorPages();
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
+            //services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
             services.AddTransient<_WalletService, WalletService>();
-
+            services.AddSignalR();
             services.AddTransient<BooksRepository>();
             services.AddTransient<IJwtService, JwtService>();
             services.AddScoped<IEmailSender, EmailSender>();
@@ -109,7 +111,7 @@ namespace Anbe
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapRazorPages();
-
+                endpoints.MapHub<SiteChatHub>("/chathub");
                 endpoints.MapControllerRoute(
          name: "areas",
          pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
@@ -118,6 +120,7 @@ namespace Anbe
                     name: "default",
                     pattern: "{controller=Home}/{action=FirstPage}/{id?}");
             });
+            
         }
     }
 }
