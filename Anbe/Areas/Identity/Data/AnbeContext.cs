@@ -5,6 +5,7 @@ using Anbe.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using SignalR.Bugeto.Models.Entities;
 
 namespace Anbe.Data
 {
@@ -68,5 +69,7 @@ namespace Anbe.Data
         public DbSet<Discount> Discounts { get; set; }
         public DbSet<JadvaleVaset> JadvaleVasets { get; set; }
         public DbSet<DastebandiKolli> DastebandiKollis { get; set; }
+        public DbSet<ChatRoom> ChatRooms{ get; set; }
+        public DbSet<ChatMessage> ChatMessages{ get; set; }
     }
 }

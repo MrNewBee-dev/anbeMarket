@@ -13,6 +13,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
+using SignalR.Anbe.Models.Services;
+using SignalR.Bugeto.Models.Services;
 using System.Text;
 
 
@@ -39,12 +41,14 @@ namespace Anbe
             services.AddTransient<BooksRepository>();
             services.AddTransient<IJwtService, JwtService>();
             services.AddScoped<IEmailSender, EmailSender>();
+            services.AddScoped<IChatRoomService, ChatRoomService>();
+            services.AddScoped<IMessageService, MessageService>();
             services.AddAuthentication(options =>
                 {
                     options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
                 }).AddCookie(cfg =>
                 {
-
+                    cfg.LoginPath = "/Home/login";
                 })
                 .AddJwtBearer(options =>
                     {
@@ -76,7 +80,7 @@ namespace Anbe
 
                     }
          );
-            services.ConfigureApplicationCookie(options => options.LoginPath = "/SignIn");
+            services.ConfigureApplicationCookie(options => options.LoginPath = "/Home/login");
             services.AddApiVersioning(option =>
             {
                 option.ReportApiVersions = true;
@@ -112,6 +116,7 @@ namespace Anbe
             {
                 endpoints.MapRazorPages();
                 endpoints.MapHub<SiteChatHub>("/chathub");
+                endpoints.MapHub<SupportHub>("/supporthub");
                 endpoints.MapControllerRoute(
          name: "areas",
          pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"

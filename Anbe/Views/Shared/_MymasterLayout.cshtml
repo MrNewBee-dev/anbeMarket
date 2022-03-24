@@ -101,7 +101,9 @@
             </div>
         </div>
     </div>
-
+    <script src="~/lib/microsoft/signalr/dist/browser/signalr.min.js"></script>
+    
+    @await RenderSectionAsync("Sig", required: false)
     <script src="/vendor/chart.js/chart.min.js"></script>
     <script src="/js/carbon.js"></script>
     <script src="/js/demo.js"></script>

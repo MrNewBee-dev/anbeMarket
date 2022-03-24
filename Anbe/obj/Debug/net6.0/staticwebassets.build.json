@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "zHjylweGgUGVSsScqlCcYu6dPEQjIjIdIUQvywjx710=",
+  "Hash": "p4Pqm2c+hYbGrIiQ4x/CHhg6SZFcuCH6dUXS0G0/nHo=",
   "Source": "Anbe",
   "BasePath": "_content/Anbe",
   "Mode": "Default",
@@ -5064,6 +5064,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\site.min.js"
+    },
+    {
+      "Identity": "C:\\Users\\milad\\Desktop\\test\\anbeMarket\\Anbe\\wwwroot\\js\\SupportSignalRService.js",
+      "SourceId": "Anbe",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\milad\\Desktop\\test\\anbeMarket\\Anbe\\wwwroot\\",
+      "BasePath": "_content/Anbe",
+      "RelativePath": "js/SupportSignalRService.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\SupportSignalRService.js"
     },
     {
       "Identity": "C:\\Users\\milad\\Desktop\\test\\anbeMarket\\Anbe\\wwwroot\\js\\TreeView.js",
