@@ -25,7 +25,7 @@ namespace Anbe.Models.ViewModels
         }
 
         public IEnumerable<TreeViewCategory> Categories { get; set; }
-
+        
 
         [Display(Name = "نامحصول")]
         public string ProductName { get; set; }
@@ -61,13 +61,80 @@ namespace Anbe.Models.ViewModels
 
         public IFormFile FilesName { get; set; }
 
+       public List<string> DisplayName { get; set; }
+
+        public List<string> Value { get; set; }
+
         [Display(Name = "عکس محصول")]
         public string Image { get; set; }
         public virtual List<Color> Colors { get; set; }
         public virtual ICollection<ProductDetails> ProductDetails { get; set; }
 
     }
+    public class ProductViewModelE
+    {
+        public ProductViewModelE(IEnumerable<TreeViewCategory> viewCategories)
+        {
+            Categories = viewCategories;
+        }
 
+
+        public ProductViewModelE()
+        {
+
+        }
+
+        public IEnumerable<TreeViewCategory> Categories { get; set; }
+
+        [Required]
+
+        public int ProductId { get; set; }
+        [Required]
+        [Display(Name = "نامحصول")]
+        public string ProductName { get; set; }
+        [Required]
+        [Display(Name = "کد محصول")]
+        public int ProductNumber { get; set; }//code mahsol
+        [Display(Name = "تعداد محصول")]
+        public int ProductTotal { get; set; }//tedad kole mahsolat
+        [Display(Name = "تعداد فروخته شده ")]
+        public int? ProductSold { get; set; }
+        [Display(Name = "تاریخ ثبت")]
+        public DateTime? CreateDate { get; set; }//roze ijad mahsool
+        [Display(Name = "منتشر شده")]
+        public bool IsPublish { get; set; }
+
+        [Display(Name = "تسویه دار")]
+        public bool Nahveyetasviye { get; set; }
+        [Display(Name = "قیمت")]
+        public int Price { get; set; }
+
+        [Display(Name = "قیمت برای توزیع کننده")]
+        public int PricetoziKonande { get; set; }
+
+
+        [Display(Name = "شرح محصول")]
+        public string ProductDescription { get; set; }
+
+        public string ProductUrl { get; set; }
+
+        [Display(Name = "نوع دسته ")]
+        public int[] CategoryId { get; set; }
+
+        public string NameMaqaze { get; set; }
+
+        public IFormFile FilesName { get; set; }
+
+        public List<string> DisplayName { get; set; }
+
+        public List<string> Value { get; set; }
+
+        [Display(Name = "عکس محصول")]
+        public string Image { get; set; }
+        public virtual List<Color> Colors { get; set; }
+        public virtual ICollection<ProductDetails> ProductDetails { get; set; }
+
+    }
     public class ProductViewModelViews
     {
         [Required]

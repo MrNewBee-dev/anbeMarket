@@ -24,7 +24,7 @@ namespace ViewComponentSample.ViewComponents
         
         }
     }
-    class GetProfileViewModel {
+ public  class GetProfileViewModel {
 
         public string Name { get; set; }
     }

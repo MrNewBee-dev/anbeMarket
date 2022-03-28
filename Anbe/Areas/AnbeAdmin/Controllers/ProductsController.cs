@@ -1,4 +1,5 @@
-﻿using Anbe.Data;
+﻿using Anbe.Areas.AnbeAdmin.Models;
+using Anbe.Data;
 using Anbe.Models;
 using Anbe.Models.ViewModels;
 using BookShop.Models.Repository;
@@ -55,7 +56,7 @@ namespace Nazar1988.Areas.MyMaster.Controllers
         }
 
         // GET: MyMaster/Products
-        public async Task<IActionResult> Index(string pname,string Msg, int pageIndex = 1 )
+        public async Task<IActionResult> Index(string pname, string Msg, int pageIndex = 1)
         {
             var userid = User.FindFirstValue(ClaimTypes.NameIdentifier);
             ViewBag.numPage = (pageIndex - 1) * 10 + 1;
@@ -75,26 +76,26 @@ namespace Nazar1988.Areas.MyMaster.Controllers
                 var model = await _context.Products.ToListAsync();
                 if (pname != null)
                 {
-                    model =  model.Where(p => p.ProductName.Contains(pname,StringComparison.OrdinalIgnoreCase) ).ToList();
+                    model = model.Where(p => p.ProductName.Contains(pname, StringComparison.OrdinalIgnoreCase)).ToList();
                 }
-              var  pagingModel = PagingList.Create(model, 10, pageIndex);
+                var pagingModel = PagingList.Create(model, 10, pageIndex);
                 pagingModel.RouteValue = new RouteValueDictionary {
                     { "row",10 },
                     { "pname",pname }
                 };
-              
+
                 return View(pagingModel);
             }
             if (pname == null)
             {
-                var pagingModel = PagingList.Create(await _context.Products.Where(x=>x.ApplicationUsersId == updateuser.Id).ToListAsync(), 10, pageIndex);
+                var pagingModel = PagingList.Create(await _context.Products.Where(x => x.ApplicationUsersId == updateuser.Id).ToListAsync(), 10, pageIndex);
                 pagingModel.RouteValue = new RouteValueDictionary {
                     { "row",10 },
                     { "pname",pname }
                 };
                 return View(pagingModel);
             }
-          
+
             var pagingModel1 = PagingList.Create(await _context.Products.Where(p => p.ProductName.Contains(pname, StringComparison.OrdinalIgnoreCase) && p.ApplicationUsersId == updateuser.Id).ToListAsync(), 10, pageIndex);
 
 
@@ -103,7 +104,7 @@ namespace Nazar1988.Areas.MyMaster.Controllers
                     { "pname",pname }
                 };
 
-            
+
 
             return View(pagingModel1);
 
@@ -127,7 +128,7 @@ namespace Nazar1988.Areas.MyMaster.Controllers
             // ReSharper disable once Mvc.ViewNotResolved
             return View(product);
         }
-        
+
         public async Task<IActionResult> QickEdit(string productName, string Price, string priceTozi, int? id, int pageIndex = 1)
         {
             if (id == null)
@@ -148,17 +149,17 @@ namespace Nazar1988.Areas.MyMaster.Controllers
             {
                 return NotFound();
             }
-             Price = Price.Replace(",", "").Replace("تومان","");
+            Price = Price.Replace(",", "").Replace("تومان", "");
             priceTozi = priceTozi.Replace(",", "").Replace("تومان", "");
             product.ProductName = productName;
             product.Price = Int32.Parse(Price);
-            product.PriceToziKonande = Int32.Parse(priceTozi); 
+            product.PriceToziKonande = Int32.Parse(priceTozi);
             _context.Products.Update(product);
             await _context.SaveChangesAsync();
             return RedirectToAction("index", new { pageIndex = pageIndex });
         }
 
-            public async Task<IActionResult> EditProductView(int? id, int pageIndex = 1)
+        public async Task<IActionResult> EditProductView(int? id, int pageIndex = 1)
         {
             if (id == null)
             {
@@ -177,23 +178,7 @@ namespace Nazar1988.Areas.MyMaster.Controllers
             return RedirectToAction("index", new { pageIndex = pageIndex });
 
         }
-            public async Task<IActionResult> Edit(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
 
-            var product = await _context.Products
-                .FirstOrDefaultAsync(m => m.ProductID == id);
-            if (product == null)
-            {
-                return NotFound();
-            }
-
-            return View(product);
-
-        }
 
         public async Task<IActionResult> End()
         {
@@ -230,16 +215,16 @@ namespace Nazar1988.Areas.MyMaster.Controllers
             return View(viewModel);
         }
         [HttpPost]
-        [AutoValidateAntiforgeryToken]
-       
+
+
 
 
         // POST: MyMaster/Products/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(ProductViewModel viewModel, IFormFile files)
+        [AutoValidateAntiforgeryToken]
+        public async Task<IActionResult> Create(ProductViewModel viewModel)
         {
             var userid = User.FindFirstValue(ClaimTypes.NameIdentifier);
 
@@ -263,40 +248,41 @@ namespace Nazar1988.Areas.MyMaster.Controllers
                 {
                     Directory.CreateDirectory(UploadsRootFoolder);
                 }
-              
-                    if (files  != null)
-                    {
+                var files = viewModel.FilesName;
+                if (files != null)
+                {
                     name.Clear();
-                        string FileExtention = Path.GetExtension(files.FileName);
+                    string FileExtention = Path.GetExtension(files.FileName);
 
-                        if (FileExtention == ".jpg" || FileExtention == ".png")
+                    if (FileExtention == ".jpg" || FileExtention == ".png")
+                    {
+
+
+                        string NewFileName = String.Concat(Guid.NewGuid().ToString(), FileExtention);
+                        var path = Path.Combine(UploadsRootFoolder, NewFileName);
+                        using (var stream = new FileStream(path, FileMode.Create))
                         {
 
-
-                            string NewFileName = String.Concat(Guid.NewGuid().ToString(), FileExtention);
-                            var path = Path.Combine(UploadsRootFoolder, NewFileName);
-                            using (var stream = new FileStream(path, FileMode.Create))
-                            {
-
-                                await files.CopyToAsync(stream);
-                                name.Add(NewFileName);
-
-                            }
+                            await files.CopyToAsync(stream);
+                            name.Add(NewFileName);
 
                         }
 
                     }
 
+                }
 
 
 
-                
+
+
 
                 var Transaction = _context.Database.BeginTransaction();
                 try
                 {
                     Product product = new Product()
                     {
+
                         ProductName = viewModel.ProductName,
                         Price = viewModel.Price,
                         PriceToziKonande = viewModel.PricetoziKonande,
@@ -313,14 +299,30 @@ namespace Nazar1988.Areas.MyMaster.Controllers
                             EndtDate = DateTime.Now,
                             StartDate = DateTime.Now
                         }
-                        ,ApplicationUsersId = updateuser.Id
+
+                        ,
+                        ApplicationUsersId = updateuser.Id
 
 
                     };
+
+
+
                     await _context.Products.AddAsync(product);
                     await _context.SaveChangesAsync();
 
+                    List<ProductDetails> productDetailsList = new List<ProductDetails>();
+                    if (viewModel.Value != null)
+                    {
 
+                        for (int i = 0; i < viewModel.Value.Count; i++)
+                        {
+                            ProductDetails productDetails = new ProductDetails() { Display = viewModel.Value[i], Vizhegi = viewModel.DisplayName[i], ProductsProductID = product.ProductID };
+
+                            productDetailsList.Add(productDetails);
+                        }
+                        await _context.ProductDetails.AddRangeAsync(productDetailsList);
+                    }
 
                     if (viewModel.CategoryId != null)
                     {
@@ -340,7 +342,7 @@ namespace Nazar1988.Areas.MyMaster.Controllers
 
                     await _context.SaveChangesAsync();
                     Transaction.Commit();
-                    return RedirectToAction("Index");
+                    return Json(Url.Action("Index", "Products"));
                 }
                 catch
                 {
@@ -353,7 +355,40 @@ namespace Nazar1988.Areas.MyMaster.Controllers
                 return View(viewModel);
             }
         }
-        public async Task<IActionResult> Edit(ProductEditViewModelViews viewModel)
+        [HttpGet]
+        public async Task<IActionResult> Edit(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var product = await _context.Products.Where(m => m.ProductID == id).Select(x => new ProductViewModelE
+            {
+                Categories = _repository.GetAllCategories(),
+                Price = x.Price,
+                PricetoziKonande = x.PriceToziKonande,
+                IsPublish = x.IsPublish
+                ,ProductName =x.ProductName,
+                Nahveyetasviye = x.NAhveyetasviye,
+                ProductDescription = x.ProductDescription,
+                ProductDetails = x.ProductDetails,
+                ProductId = x.ProductID
+
+
+            }).FirstOrDefaultAsync();
+            if (product == null)
+            {
+                return NotFound();
+            }
+
+            return View(product);
+
+
+        }
+        [HttpPost]
+        [AutoValidateAntiforgeryToken]
+        public async Task<IActionResult> Edit(ProductViewModelE viewModel)
         {
 
             var userid = User.FindFirstValue(ClaimTypes.NameIdentifier);
@@ -377,83 +412,84 @@ namespace Nazar1988.Areas.MyMaster.Controllers
                 _context.Products.Update(ProductFound);
                 await _context.SaveChangesAsync();
             }
-            return RedirectToAction("index");
+            return Json(Url.Action("Index", "Products"));
         }
-        [Route("Upload")]
-        public IActionResult FileUploader(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
+        //[Route("Upload")]
+        //public IActionResult FileUploader(int? id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return NotFound();
+        //    }
 
-            ViewBag.Id = id;
-            return View();
-        }
+        //    ViewBag.Id = id;
+        //    return View();
+        //}
 
-        [HttpPost]
-        [Route("Upload")]
-        public async Task<IActionResult> FileUploader(IEnumerable<IFormFile> files, int id)
-        {
-            List<string> name = new List<string>();
-            var products = _context.Products.Find(id);
+        //    [HttpPost]
+        //    [Route("Upload")]
+        //    public async Task<IActionResult> FileUploader(IEnumerable<IFormFile> files, int id)
+        //    {
+        //        List<string> name = new List<string>();
+        //        var products = _context.Products.Find(id);
 
-            if (products == null)
-            {
-                return NotFound();
-            }
+        //        if (products == null)
+        //        {
+        //            return NotFound();
+        //        }
 
-            var UploadsRootFoolder = Path.Combine(_env.WebRootPath, "GalleryFiles");
-            if (!Directory.Exists(UploadsRootFoolder))
-            {
-                Directory.CreateDirectory(UploadsRootFoolder);
-            }
-            foreach (var item in files)
-            {
-                if (files != null)
-                {
-                    string FileExtention = Path.GetExtension(item.FileName);
+        //        var UploadsRootFoolder = Path.Combine(_env.WebRootPath, "GalleryFiles");
+        //        if (!Directory.Exists(UploadsRootFoolder))
+        //        {
+        //            Directory.CreateDirectory(UploadsRootFoolder);
+        //        }
+        //        foreach (var item in files)
+        //        {
+        //            if (files != null)
+        //            {
+        //                string FileExtention = Path.GetExtension(item.FileName);
 
-                    if (FileExtention == ".jpg" || FileExtention == ".png")
-                    {
+        //                if (FileExtention == ".jpg" || FileExtention == ".png")
+        //                {
 
 
-                        string NewFileName = String.Concat(Guid.NewGuid().ToString(), FileExtention);
-                        var path = Path.Combine(UploadsRootFoolder, NewFileName);
-                        using (var stream = new FileStream(path, FileMode.Create))
-                        {
+        //                    string NewFileName = String.Concat(Guid.NewGuid().ToString(), FileExtention);
+        //                    var path = Path.Combine(UploadsRootFoolder, NewFileName);
+        //                    using (var stream = new FileStream(path, FileMode.Create))
+        //                    {
 
-                            await item.CopyToAsync(stream);
-                            name.Add(stream.Name.ToString());
+        //                        await item.CopyToAsync(stream);
+        //                        name.Add(stream.Name.ToString());
 
-                        }
+        //                    }
 
-                    }
+        //                }
 
-                }
-            }
+        //            }
+        //        }
 
-            products.ImagePath = System.Text.Json.JsonSerializer.Serialize(name);
-            //   var show = System.Text.Json.JsonSerializer.Deserialize<string>(products.ImagePath);
+        //        products.ImagePath = System.Text.Json.JsonSerializer.Serialize(name);
+        //        //   var show = System.Text.Json.JsonSerializer.Deserialize<string>(products.ImagePath);
 
-            try
-            {
-                _context.Update(products);
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
+        //        try
+        //        {
+        //            _context.Update(products);
+        //            await _context.SaveChangesAsync();
+        //        }
+        //        catch (DbUpdateConcurrencyException)
+        //        {
 
-                return NotFound();
+        //            return NotFound();
 
-            }
+        //        }
 
-            return new JsonResult("success");
+        //        return new JsonResult("success");
 
-        }
+        //    }
+        //}
+
+
+
     }
-
-
-
 }
 

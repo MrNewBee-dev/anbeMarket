@@ -10,6 +10,7 @@ namespace BookShop.Models.ViewModels
         }
         public int CategoryID { get; set; }
         public string CategoryName { get; set; }
+        public int? ParentIDCat { get; set; }
         public List<TreeViewCategory> SubCategories { get; set; }
     }
 

@@ -10,5 +10,6 @@ namespace Anbe.Areas.AnbeAdmin.Models
         public string Display { get; set; }
         public string Vizhegi { get; set; }
         public virtual Product Products { get; set; }
+        public int ProductsProductID  { get; set; }
     }
 }

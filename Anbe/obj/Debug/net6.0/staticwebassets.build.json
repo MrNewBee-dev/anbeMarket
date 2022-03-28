@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "p4Pqm2c+hYbGrIiQ4x/CHhg6SZFcuCH6dUXS0G0/nHo=",
+  "Hash": "+lSgGs801T/j1Pd1YHSrXzB1DM+620OGeCs0Im/NbaE=",
   "Source": "Anbe",
   "BasePath": "_content/Anbe",
   "Mode": "Default",
@@ -21826,6 +21826,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\select2\\src\\scss\\theme\\default\\layout.scss"
+    },
+    {
+      "Identity": "C:\\Users\\milad\\Desktop\\test\\anbeMarket\\Anbe\\wwwroot\\Sweetalert2\\sweetalert2.min.css",
+      "SourceId": "Anbe",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\milad\\Desktop\\test\\anbeMarket\\Anbe\\wwwroot\\",
+      "BasePath": "_content/Anbe",
+      "RelativePath": "Sweetalert2/sweetalert2.min.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Sweetalert2\\sweetalert2.min.css"
+    },
+    {
+      "Identity": "C:\\Users\\milad\\Desktop\\test\\anbeMarket\\Anbe\\wwwroot\\Sweetalert2\\sweetalert2.min.js",
+      "SourceId": "Anbe",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\milad\\Desktop\\test\\anbeMarket\\Anbe\\wwwroot\\",
+      "BasePath": "_content/Anbe",
+      "RelativePath": "Sweetalert2/sweetalert2.min.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Sweetalert2\\sweetalert2.min.js"
     },
     {
       "Identity": "C:\\Users\\milad\\Desktop\\test\\anbeMarket\\Anbe\\wwwroot\\vendor\\bootstrap\\js\\bootstrap.min.js",

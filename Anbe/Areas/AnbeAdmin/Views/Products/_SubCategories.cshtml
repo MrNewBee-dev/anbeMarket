@@ -5,7 +5,7 @@
     @foreach (var item in Model)
     {
         <li>
-            <input type="checkbox" value="@item.CategoryID" name="CategoryID" /> @item.CategoryName
+            <input type="radio" value="@item.CategoryID" name="CategoryID" id="CategoryID" /> @item.CategoryName
             @await Html.PartialAsync("_SubCategories", item.SubCategories)
         </li>
     }

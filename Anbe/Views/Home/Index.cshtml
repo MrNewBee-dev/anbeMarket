@@ -2,7 +2,7 @@
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 @{Layout = "~/Views/Shared/_LayoutPage.cshtml";
 }
-<div class="col-lg-9 col-md-9 col-xs-12 pl">
+<div class="col-lg-9 col-md-9 col-12 pl">
     <div class="shop-archive-content mt-3 d-block">
         <div class="archive-header">
             <h2 class="archive-header-title">آرشیو محصولات</h2>
@@ -35,7 +35,7 @@
                     <div class="row">
                         @foreach (var item in @Model)
                         {
-                            <div class="col-lg-4 col-md-4 col-xs-12 order-1 d-block mb-3">
+                            <div class="col-lg-4 col-md-4 col-12  d-block mb-3">
                                 <section class="product-box product product-type-simple">
                                     <div class="thumb">
                                         <a href="#" class="d-block">
@@ -50,7 +50,7 @@
                                             <div hidden class="discount-d">
                                                 <span>10%</span>
                                             </div>
-                                            <img src="~/GalleryFiles/@item.Image">
+                                            <img class="img-fluid" width="300" height="300" src="~/GalleryFiles/@item.Image">
                                         </a>
                                     </div>
                                     <div class="title">
@@ -117,7 +117,7 @@
         </div>
     </div>
   
- <div class="card" id="ChatBox">
+ <div class="card d-none d-md-block" id="ChatBox" >
     <div class="card-header">
         <b>پشتیبانی آنلاین</b>
     </div>
