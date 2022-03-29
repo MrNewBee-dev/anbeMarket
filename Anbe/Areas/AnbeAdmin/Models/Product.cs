@@ -29,11 +29,23 @@ namespace Anbe.Models
         public Discount DiscountId { get; set; }
 
         public string ImagePath { get; set; }
+
+
+
+
         [Column(TypeName = "nvarchar(450)")]
         [ForeignKey("ApplicationUser")]
         public string ApplicationUsersId { get; set; }
+
+        
         public List<Product_Category> book_Categories { get; set; }
+        
+        
+        
         public List<OrderDetail> OrderDetails { get; set; }
+
+        
+        [ForeignKey("ProductsProductID")]
         public virtual ICollection<ProductDetails> ProductDetails { get; set; }
 
         public virtual ICollection<Color> Colors { get; set; }

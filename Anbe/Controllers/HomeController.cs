@@ -32,11 +32,23 @@ namespace Anbe.Controllers
         {
             if (id == null)
             {
-                return View();
+                return BadRequest();
             }
 
-            var product = await anbeContext.Products
-                .FirstOrDefaultAsync(m => m.ProductID == id);
+            var product = await anbeContext.Products.Where(m => m.ProductID == id).Select(x=> new ProductViewModel {
+            ProductName = x.ProductName,
+            Price = x.Price,
+            PricetoziKonande = x.PriceToziKonande,
+            Nahveyetasviye = x.NAhveyetasviye,
+            IsPublish = x.IsPublish,
+              NameMaqaze =  x.ApplicationUsers.NameMaqaze,
+              ProductDescription = x.ProductDescription,
+              ProductDetails = x.ProductDetails,
+              
+
+            })
+                .FirstOrDefaultAsync();
+            
             if (product == null)
             {
                 return NotFound();
@@ -121,7 +133,7 @@ namespace Anbe.Controllers
                 NameMaqaze = x.ApplicationUsers.NameMaqaze,
                 PricetoziKonande = x.PriceToziKonande,
                 Image = (JsonConvert.DeserializeObject<List<string>>(x.ImagePath).FirstOrDefault().ToString() == null) ? "2544106a-7535-426b-8dff-88b47ebf2de9.jpg" : JsonConvert.DeserializeObject<List<string>>(x.ImagePath).FirstOrDefault().ToString()
-
+                ,ProductId = x.ProductID
 
             }).ToList();
             if (!User.IsInRole("Foroshande") && !User.IsInRole("BonakDar") && !User.IsInRole("SuperAdmin"))

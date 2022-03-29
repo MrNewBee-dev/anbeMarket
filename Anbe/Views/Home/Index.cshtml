@@ -36,6 +36,7 @@
                         @foreach (var item in @Model)
                         {
                             <div class="col-lg-4 col-md-4 col-12  d-block mb-3">
+                                <form method="post">
                                 <section class="product-box product product-type-simple">
                                     <div class="thumb">
                                         <a href="#" class="d-block">
@@ -79,7 +80,10 @@
                                         @item.ProductDescription
                                     
                                     </div>
+                                    <button type="submit" asp-action="Details" asp-route-id="@item.ProductId" class="btn btn-primary mt-3">توضیحات کامل</button>
                                 </section>
+                                
+                                </form>
                             </div>
                         }
                         

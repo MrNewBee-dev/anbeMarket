@@ -26,7 +26,8 @@ namespace Anbe.Models.ViewModels
 
         public IEnumerable<TreeViewCategory> Categories { get; set; }
         
-
+        [Required]
+        public int ProductId { get; set; }
         [Display(Name = "نامحصول")]
         public string ProductName { get; set; }
         [Display(Name = "کد محصول")]
