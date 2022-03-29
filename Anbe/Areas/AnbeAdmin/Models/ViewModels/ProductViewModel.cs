@@ -68,7 +68,7 @@ namespace Anbe.Models.ViewModels
 
         [Display(Name = "عکس محصول")]
         public string Image { get; set; }
-        public virtual List<Color> Colors { get; set; }
+     //   public virtual List<Color> Colors { get; set; }
         public virtual ICollection<ProductDetails> ProductDetails { get; set; }
 
     }
@@ -132,7 +132,7 @@ namespace Anbe.Models.ViewModels
 
         [Display(Name = "عکس محصول")]
         public string Image { get; set; }
-        public virtual List<Color> Colors { get; set; }
+        //public virtual List<Color> Colors { get; set; }
         public virtual ICollection<ProductDetails> ProductDetails { get; set; }
 
     }

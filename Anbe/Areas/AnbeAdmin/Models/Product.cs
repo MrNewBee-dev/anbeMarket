@@ -22,7 +22,7 @@ namespace Anbe.Models
         public int PriceToziKonande { get; set; }
         public string ProductDescription { get; set; }
 
-
+        public virtual List<Product_Color> ProductColors { get; set; }
 
         public string ProductUrl { get; set; }
 
@@ -48,7 +48,7 @@ namespace Anbe.Models
         [ForeignKey("ProductsProductID")]
         public virtual ICollection<ProductDetails> ProductDetails { get; set; }
 
-        public virtual ICollection<Color> Colors { get; set; }
+    //    public virtual ICollection<Color> Colors { get; set; }
         public virtual ApplicationUser ApplicationUsers { get; set; }
 
     }

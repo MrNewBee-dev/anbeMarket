@@ -42,7 +42,7 @@ namespace Anbe.Areas.API
                 ProductName = x.ProductName,
                 ImagePath = JsonConvert.DeserializeObject<List<string>>(x.ImagePath),
                 CreateDate = x.CreateDate,
-                Colors = x.Colors.Select(tc => new ColorViewModels { EsmeRang = tc.EsmeRang, HexRag = tc.HexRag }).ToList(),
+                //Colors = x.Colors.Select(tc => new ColorViewModels { EsmeRang = tc.EsmeRang, HexRag = tc.HexRag }).ToList(),
 
                 CompanyName = x.ApplicationUsers.NameMaqaze
                 ,
@@ -124,7 +124,7 @@ namespace Anbe.Areas.API
                         {
                             ProductName = viewModel.ProductName,
                             Price = viewModel.Price,
-                            Colors = viewModel.Colors,
+                            //Colors = viewModel.Colors,
                             ProductDetails = viewModel.ProductDetails,
                             ApplicationUsersId = user,
                             PriceToziKonande = viewModel.PricetoziKonande,

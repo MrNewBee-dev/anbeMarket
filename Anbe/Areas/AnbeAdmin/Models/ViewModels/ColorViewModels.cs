@@ -12,5 +12,10 @@ namespace Anbe.Areas.AnbeAdmin.Models.ViewModels
         [Display(Name = "کد رنگ")]
         public string HexRag { get; set; }
 
+        [Required(ErrorMessage = "رنگ مورد نظر را وارد کنید")]
+        [Display(Name = "کد رنگ")]
+        public int Id { get; set; }
+
+
     }
 }

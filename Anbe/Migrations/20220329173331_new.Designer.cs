@@ -4,6 +4,7 @@ using Anbe.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Anbe.Migrations
 {
     [DbContext(typeof(AnbeContext))]
-    partial class AnbeContextModelSnapshot : ModelSnapshot
+    [Migration("20220329173331_new")]
+    partial class @new
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -34,25 +36,6 @@ namespace Anbe.Migrations
                     b.HasKey("ID");
 
                     b.ToTable("ChatRooms");
-                });
-
-            modelBuilder.Entity("Anbe.Areas.AnbeAdmin.Models.Color", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<string>("EsmeRang")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("HexRag")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Color");
                 });
 
             modelBuilder.Entity("Anbe.Areas.AnbeAdmin.Models.DastebandiKolli", b =>
@@ -86,21 +69,6 @@ namespace Anbe.Migrations
                     b.HasIndex("DastebandiKolliId");
 
                     b.ToTable("JadvaleVasets");
-                });
-
-            modelBuilder.Entity("Anbe.Areas.AnbeAdmin.Models.Product_Color", b =>
-                {
-                    b.Property<int>("ProductId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ColorId")
-                        .HasColumnType("int");
-
-                    b.HasKey("ProductId", "ColorId");
-
-                    b.HasIndex("ColorId");
-
-                    b.ToTable("Product_Color");
                 });
 
             modelBuilder.Entity("Anbe.Areas.AnbeAdmin.Models.ProductDetails", b =>
@@ -636,25 +604,6 @@ namespace Anbe.Migrations
                     b.Navigation("Useree");
                 });
 
-            modelBuilder.Entity("Anbe.Areas.AnbeAdmin.Models.Product_Color", b =>
-                {
-                    b.HasOne("Anbe.Areas.AnbeAdmin.Models.Color", "Colors")
-                        .WithMany("ProductColors")
-                        .HasForeignKey("ColorId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Anbe.Models.Product", "Products")
-                        .WithMany("ProductColors")
-                        .HasForeignKey("ProductId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Colors");
-
-                    b.Navigation("Products");
-                });
-
             modelBuilder.Entity("Anbe.Areas.AnbeAdmin.Models.ProductDetails", b =>
                 {
                     b.HasOne("Anbe.Models.Product", "Products")
@@ -832,11 +781,6 @@ namespace Anbe.Migrations
                     b.Navigation("ChatMessages");
                 });
 
-            modelBuilder.Entity("Anbe.Areas.AnbeAdmin.Models.Color", b =>
-                {
-                    b.Navigation("ProductColors");
-                });
-
             modelBuilder.Entity("Anbe.Areas.AnbeAdmin.Models.DastebandiKolli", b =>
                 {
                     b.Navigation("Users");
@@ -872,8 +816,6 @@ namespace Anbe.Migrations
                     b.Navigation("DiscountId");
 
                     b.Navigation("OrderDetails");
-
-                    b.Navigation("ProductColors");
 
                     b.Navigation("ProductDetails");
 

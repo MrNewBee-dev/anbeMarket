@@ -34,6 +34,27 @@ namespace Anbe.Data
                .WithMany(role => role.Roles).HasForeignKey(r => r.UserId);
 
 
+
+            builder.Entity<Product_Color>().HasKey(t => new { t.ProductId, t.ColorId });
+
+
+
+            builder.Entity<Product_Color>()
+                .HasOne<Color>(sc => sc.Colors)
+                .WithMany(s => s.ProductColors)
+                .HasForeignKey(sc => sc.ColorId).IsRequired();
+
+
+            builder.Entity<Product_Color>()
+                .HasOne<Product>(sc => sc.Products)
+                .WithMany(s => s.ProductColors)
+                .HasForeignKey(sc => sc.ProductId).IsRequired();
+
+
+
+
+
+
             builder.Entity<JadvaleVaset>().HasKey(t => new { t.UserId, t.DastebandiKolliId });
 
 
