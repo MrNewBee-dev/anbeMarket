@@ -4,6 +4,7 @@ using Anbe.Models;
 using Anbe.Models.ViewModels;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,6 +28,23 @@ namespace Anbe.Controllers
             _signInManager = signInManager;
         }
 
+        public async Task<IActionResult> Details(int? id)
+        {
+            if (id == null)
+            {
+                return View();
+            }
+
+            var product = await anbeContext.Products
+                .FirstOrDefaultAsync(m => m.ProductID == id);
+            if (product == null)
+            {
+                return NotFound();
+            }
+
+            // ReSharper disable once Mvc.ViewNotResolved
+            return View(product);
+        }
 
         public IActionResult FirstPage()
         {

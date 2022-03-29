@@ -1,0 +1,673 @@
+﻿@*@model Anbe.Models.Product*@
+@{
+    ViewData["Title"] = "جزییات محصول";
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>محصول ناموجود</title>
+    <!-- font---------------------------------------->
+    <link rel="stylesheet" href="~/assets/css/vendor/font-awesome.min.css">
+    <link rel="stylesheet" href="~/assets/css/vendor/materialdesignicons.css">
+    <!-- plugin-------------------------------------->
+    <link rel="stylesheet" href="~/assets/css/vendor/bootstrap.css">
+    <link rel="stylesheet" href="~/assets/css/vendor/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/assets/css/vendor/noUISlider.min.css">
+    <link rel="stylesheet" href="~/assets/css/vendor/lightgallery.css">
+    <link rel="stylesheet" href="~/assets/css/vendor/nice-select.css">
+    <!-- main-style---------------------------------->
+    <link rel="stylesheet" href="~/assets/css/main.css">
+    <link rel="stylesheet" href="~/assets/css/responsive.css">
+</head>
+
+<body>
+    <!-- header-------------------------------->
+   
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">جستجو</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+              
+            </div>
+        </div>
+    </div>
+    <div class="nav-categories-overlay"></div>
+    <div class="overlay-search-box"></div>
+    <!-- header-------------------------------->
+
+    <!-- arshive-product----------------------->
+    <div class="container-main">
+        <div class="d-block">
+            <div class="page-content page-row">
+                <div class="main-row">
+                    
+                    <div class="col-lg">
+                        <div class="product type-product">
+                            <div class="col-lg-5 col-xs-12 pr d-block" style="padding: 0;">
+                                <section class="product-gallery">
+                                    <div class="gallery">
+                                     
+                                        <div>
+                                            <div class="gallery-item">
+                                                <div class="gallery-img">
+                                                    <div id="">
+                                                        <a href="#">
+                                                            <img class="zoom-img" id="img-product-zoom"
+                                                                src="~/assets/images/page-single-product/product-img/product-img-note10.jpg"
+                                                                data-zoom-image="assets/images/page-single-product/product-img/product-img-note10.jpg"
+                                                                width="411" />
+                                                            <div id="gallery_01f" style="width:420px;float:right;">
+                                                        </a>
+                                                     
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                            </div>
+                            </section>
+                        </div>
+                        <div class="col-lg-7 col-xs-12 pl mt-5 d-block">
+                            <section class="product-info">
+                                <div class="product-headline">
+                                    <h1 class="product-title">
+                                        سامسونگ مدل Galaxy Note 10 SM-N970F/DS دو سیم‌کارت ظرفیت 256 گیگابایت
+                                    </h1>
+                                    <div class="product-guaranteed text-success">
+                                        12
+                                        <span>فروش موفق</span>
+                                    </div>
+                                </div>
+                                <div class="product-attributes">
+                                    <div class="product-config">
+                                        <span class="product-title-en">Samsung Galaxy Note 10 Dual SIM 256GB Mobile
+                                            Phone</span>
+                                        <div class="product-rate">
+                                            <i class="fa fa-star active"></i>
+                                            <i class="fa fa-star active"></i>
+                                            <i class="fa fa-star active"></i>
+                                            <i class="fa fa-star active"></i>
+                                            <i class="fa fa-star active"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product-config-wrapper">
+                                    <div class="product-directory">
+                                        <ul>
+                                            <li>
+                                                <span>
+                                                    <i class="fa fa-archive"></i> دسته:
+                                                </span>
+                                                <a href="#" class="product-link product-cat-title">کالای دیجیتال</a>
+                                                ,
+                                                <a href="#" class="product-link product-cat-title">موبایل</a>
+                                            </li>
+                                            <li>
+                                                <span>
+                                                    <i class="fa fa-tags"></i> برچسب:
+                                                </span>
+                                                <a href="#" class="product-link product-tag-title">سامسونگ</a>
+                                            </li>
+                                            <li>
+                                                <span>
+                                                    برند:
+                                                </span>
+                                                <a href="#" class="product-link product-tag-title">سامسونگ</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col=lg-6 col-md-6 col-xs-12 pr">
+                                        <div class="product-variants">
+                                            <span>رنگ بندی: </span>
+                                            <ul class="js-product-variants">
+                                                <li class="ui-variant">
+                                                    <label for="#" class="ui-variant-color">
+                                                        <span class="ui-variant-shape"
+                                                            style="background-color: #56abef"></span>
+                                                        <input type="radio" value="4" name="color" id="variant"
+                                                            class="js-variant-selector" checked="">
+                                                        <span class="ui-variant-check"></span>
+                                                    </label>
+                                                </li>
+                                                <li class="ui-variant">
+                                                    <label for="#" class="ui-variant-color">
+                                                        <span class="ui-variant-shape"
+                                                            style="background-color: #a97eca"></span>
+                                                        <input type="radio" value="4" name="color" id="variant"
+                                                            class="js-variant-selector">
+                                                        <span class="ui-variant-check"></span>
+                                                    </label>
+                                                </li>
+                                                <li class="ui-variant">
+                                                    <label for="#" class="ui-variant-color">
+                                                        <span class="ui-variant-shape"
+                                                            style="background-color: #4e4c4c"></span>
+                                                        <input type="radio" value="4" name="color" id="variant"
+                                                            class="js-variant-selector">
+                                                        <span class="ui-variant-check"></span>
+                                                    </label>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="product-params pt-3">
+                                            <ul data-title="ویژگی‌های محصول">
+                                                <li>
+                                                    <span>سیستم عامل: </span>
+                                                    <span>Android</span>
+                                                </li>
+                                                <li>
+                                                    <span>شبکه های ارتباطی: </span>
+                                                    <span>2G، 3G، 4G</span>
+                                                </li>
+                                                <li>
+                                                    <span>مقدار RAM: </span>
+                                                    <span> 8 گیگابایت</span>
+                                                </li>
+                                                <li>
+                                                    <span>ویژگی‌های خاص: </span>
+                                                    <span> مقاوم در برابر آب
+                                                        دارای بدنه مقاوم
+                                                        فبلت
+                                                        مجهز به حس‌گر اثرانگشت
+                                                        مناسب عکاسی سلفی
+                                                        مناسب بازی
+                                                        دارای قلم
+                                                    </span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="product-price-survey-question">
+                                            آیا قیمت مناسب‌تری سراغ دارید؟
+                                            <div class="answers">
+                                                <a href="#"
+                                                    class="product-price-survery-answer price-yes btn btn-secondary">بلی</a>
+                                                <a href="#"
+                                                    class="product-price-survery-answer price-no btn btn-secondary">خیر</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col=lg-6 col-md-6 col-xs-12 pr">
+                                        <div class="product-seller-info">
+                                            <div class="seller-info-changable">
+                                                <div class="product-seller-row vendor">
+                                                    <span class="title"> فروشنده:</span>
+                                                    <a href="#" class="product-name">دیجی اسمارت</a>
+                                                </div>
+                                                <div class="product-seller-row guarantee">
+                                                    <span class="title"> گارانتی:</span>
+                                                    <a href="#" class="product-name">۱۸ ماهه دیجی اسمارت</a>
+                                                </div>
+                                                <div class="product-seller-row price">
+                                                    <span class="title"> قیمت:</span>
+                                                    <span href="#" class="product-name">
+                                                        <span class="unavailable">ناموجود</span>
+                                                    </span>
+                                                </div>
+                                                <div class="product-seller-row guarantee">
+                                                    <span class="title mt-3"> تعداد:</span>
+                                                    <div class="quantity pl">
+                                                        <input type="number" min="1" max="100" step="1" value="1">
+                                                        <div class="quantity-nav">
+                                                            <div class="quantity-button quantity-up">+</div>
+                                                            <div class="quantity-button quantity-down">-</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="product-seller-row add-to-cart">
+                                                    <a href="#" class="btn-add-to-cart Let-me-know btn btn-primary">
+                                                        <span class="btn-add-to-cart-txt">موجود شد به من اطلاع
+                                                            بده</span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                        <div class="product-usp">
+                            <div class="product-feature">
+                                <div class="product-feature-col">
+                                    <a href="#" class="product-feature-item">
+                                        <img src="~/assets/images/page-single-product/delivery.svg">
+                                        امکان تحویل
+                                        <br>
+                                        اکسپرس
+                                    </a>
+                                </div>
+                                <div class="product-feature-col">
+                                    <a href="#" class="product-feature-item">
+                                        <img src="~/assets/images/page-single-product/contact-us.svg">
+                                        ۷ روز هفته
+                                        <br>
+                                        ۲۴ ساعته
+                                    </a>
+                                </div>
+                                <div class="product-feature-col">
+                                    <a href="#" class="product-feature-item">
+                                        <img src="~/assets/images/page-single-product/payment-terms.svg">
+                                        امکان
+                                        <br>
+                                        پرداخت در محل
+                                    </a>
+                                </div>
+                                <div class="product-feature-col">
+                                    <a href="#" class="product-feature-item">
+                                        <img src="~/assets/images/page-single-product/return-policy.svg">
+                                        هفت روز ضمانت بازگشت کالا
+                                    </a>
+                                </div>
+                                <div class="product-feature-col">
+                                    <a href="#" class="product-feature-item">
+                                        <img src="~/assets/images/page-single-product/origin-guarantee.svg">
+                                        ضمانت
+                                        <br>
+                                        اصل بودن کالا
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tabs">
+                <div class="tab-box">
+                    <ul class="tab nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="Review-tab" data-toggle="tab" href="#Review" role="tab"
+                                aria-controls="Review" aria-selected="true">
+                                <i class="mdi mdi-glasses"></i>
+                                نقد و بررسی
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="Specifications-tab" data-toggle="tab" href="#Specifications"
+                                role="tab" aria-controls="Specifications" aria-selected="false">
+                                <i class="mdi mdi-format-list-checks"></i>
+                                مشخصات
+                            </a>
+                        </li>
+                     
+                    
+                    </ul>
+                </div>
+                <div class="col-lg">
+                    <div class="tabs-content">
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="Review" role="tabpanel"
+                                aria-labelledby="Review-tab">
+                                <h2 class="params-headline">نقد و بررسی اجمالی</h2>
+                                <section class="content-expert-summary">
+                                    <div class="mask pm-3">
+                                        <div class="mask-text">
+                                            <p>اولین گوشی همراه سری گلکسی نوت در سال 2011 روانه بازار شد تا خانواده
+                                                افسانه‌ای نوت را برای اولین بار به دنیا معرفی و تعریفی نو برای محصولات
+                                                «فبلت‌» ارائه کند. حدود 8 سال پس از آن، سامسونگ برای عرضه عضو جدید
+                                                خانواده نوت (Galaxy Note 10) با چالش‌های جدیدی مواجه است؛ این چالش‌ها
+                                                ویژگی‌های مدرنی هستند که در محصولات رقیب دیده می‌شوند. گلکسی نوت‌ها
+                                                به‌طور عمومی شبیه سری Galaxy S هستند؛ با این تفاوت که صفحه‌نمایش بزرگ‌تر
+                                                و یک قلم دیجیتال S Pen دارند. گوشی موبایل Samsung Galaxy Note10 با
+                                                دوربین سه گانه در قاب پشتی روانه بازار شده است؛ این سه سنسور با داشتن
+                                                ویژگی‌هایی مانند لرزشگیر تصویر و قابلیت فیلم‌برداری 4K خروجی تصویر
+                                                مطلوبی را برای جدیدترین عضو خانواده Note به همراه دارند. پردازش محاسبات
+                                                در این تازه‌وارد از طریق تراشه‌ی Exynos 9825 انجام می‌شود که در رده
+                                                تراشه‌های 7 نانومتری قرار می‌گیرد و با سرعت بالای خود، گلکسی نوت 10 را
+                                                برای انجام کارهای بسیار سنگین کاربردی کرده است. تراشه‌ی گرافیکی Mali-G76
+                                                هم در اجرای بازی‌های سنگین و پردازش‌های گرافیکی، گلکسی نوت 10 را سربلند
+                                                خواهد بود. صفحه‌نمایش سوپر آمولد با رزولوشن 1080 در 2280 و قابلیت نمایش
+                                                401 پیکسل در هر اینچ، تجربه‌ی تصویری شفاف و بسیار مطلوب را برای کاربران
+                                                فراهم می‌کند. نسخه 256 گیگابایتی گوشی گلکسی نوت 10 با 8 گیگابایت رم عرضه
+                                                شده است&nbsp; تا میزان مطلوبی از فضا و حافظه تصادفی را در اختیار کاربر
+                                                قرار دهد. حسگر اثرانگشت زیرصفحه‌نمایش، حسگر فشارسنج و ژیروسکوپ تنها
+                                                تعدادی از امکانات این دستگاه قدرتمند است و کار را برای رقبای این محصول
+                                                بزرگ سخت کرده است. البته در این محصول خبری از سنسور عنبیه چشم و خروجی
+                                                3.5 میلی‌متری صدا نیست که دلیل آن را می‌توان در بزرگ شدن قاب و ظرافت در
+                                                طراحی و ساخت جست‌وجو کرد. گفتنی است، باتری این محصول از نوع غیرقابل
+                                                تعویض و لیتیوم‌یون با ظرفیت 3500 میلی‌آمپر ساعت است که از فناوری‌های
+                                                شارژ سریع و شارژ بی‌سیم پشتیبانی می‌کند. این محصول قادر است دستگاه‌های
+                                                دیگر را هم به‌صورت بی‌سیم شارژ کند و از این طریق نقش یک پاوربانک را هم
+                                                ایفا کند.</p>
+                                        </div>
+                                        <a href="#" class="mask-handler">
+                                            <span class="show-more">+ ادامه مطلب</span>
+                                            <span class="show-less">- بستن</span>
+                                        </a>
+                                        <div class="shadow-box"></div>
+                                    </div>
+                                </section>
+                              
+                             
+                            </div>
+                            <div class="tab-pane fade" id="Specifications" role="tabpanel"
+                                aria-labelledby="Specifications-tab">
+                                <article>
+                                    <h2 class="params-headline">مشخصات فنی
+                                        <span>Samsung Galaxy Note 10 Dual SIM 256GB Mobile Phone</span>
+                                    </h2>
+                                    <section>
+                                        <ul class="params-list">
+                                            <li class="params-list-item">
+                                                <div class="params-list-key">
+                                                    <span class="block">ابعاد</span>
+                                                </div>
+                                                <div class="params-list-value">
+                                                    <span class="block">
+                                                        7.9 × 71.8 × 151 میلی‌متر
+                                                    </span>
+                                                </div>
+                                            </li>
+                                            <li class="params-list-item">
+                                                <div class="params-list-key">
+                                                    <span class="block">توضیحات سیم کارت</span>
+                                                </div>
+                                                <div class="params-list-value">
+                                                    <span class="block">
+                                                        سایز نانو (8.8 × 12.3 میلی‌متر)
+                                                    </span>
+                                                </div>
+                                            </li>
+                                            <li class="params-list-item">
+                                                <div class="params-list-key">
+                                                    <span class="block">وزن</span>
+                                                </div>
+                                                <div class="params-list-value">
+                                                    <span class="block">
+                                                        168 گرم
+                                                    </span>
+                                                </div>
+                                            </li>
+                                            <li class="params-list-item">
+                                                <div class="params-list-key">
+                                                    <span class="block">ساختار بدنه</span>
+                                                </div>
+                                                <div class="params-list-value">
+                                                    <span class="block">
+                                                        فلز و شیشه (محافظ گوریلا گلس روی قاب پشتی و جلویی + قاب فولادی)
+                                                    </span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </section>
+                                    <section>
+                                        <ul class="params-list">
+                                            <li class="params-list-item">
+                                                <div class="params-list-key">
+                                                    <span class="block">تراشه</span>
+                                                </div>
+                                                <div class="params-list-value">
+                                                    <span class="block">
+                                                        Exynos 9825 (7 nm) Chipset
+                                                    </span>
+                                                </div>
+                                            </li>
+                                            <li class="params-list-item">
+                                                <div class="params-list-key">
+                                                    <span class="block">نوع پردازنده</span>
+                                                </div>
+                                                <div class="params-list-value">
+                                                    <span class="block">
+                                                        64 بیت
+                                                    </span>
+                                                </div>
+                                            </li>
+                                            <li class="params-list-item">
+                                                <div class="params-list-key">
+                                                    <span class="block">فرکانس پردازنده‌ی مرکزی</span>
+                                                </div>
+                                                <div class="params-list-value">
+                                                    <span class="block">
+                                                        2.73, 2.4 و 1.9 گیگاهرتز
+                                                    </span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </section>
+                                    <section>
+                                        <ul class="params-list">
+                                            <li class="params-list-item">
+                                                <div class="params-list-key">
+                                                    <span class="block">حافظه داخلی</span>
+                                                </div>
+                                                <div class="params-list-value">
+                                                    <span class="block">
+                                                        256 گیگابایت
+                                                    </span>
+                                                </div>
+                                            </li>
+                                            <li class="params-list-item">
+                                                <div class="params-list-key">
+                                                    <span class="block">مقدار RAM</span>
+                                                </div>
+                                                <div class="params-list-value">
+                                                    <span class="block">
+                                                        8 گیگابایت
+                                                    </span>
+                                                </div>
+                                            </li>
+                                            <li class="params-list-item">
+                                                <div class="params-list-key">
+                                                    <span class="block">پشتیبانی از کارت حافظه جانبی</span>
+                                                </div>
+                                                <div class="params-list-value">
+                                                    <span class="block">
+                                                        ندارد
+                                                    </span>
+                                                </div>
+                                            </li>
+                                            <li class="params-list-item">
+                                                <div class="params-list-key">
+                                                    <span class="block">حداکثر ظرفیت کارت حافظه</span>
+                                                </div>
+                                                <div class="params-list-value">
+                                                    <span class="block">
+                                                        1 ترابایت
+                                                    </span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </section>
+                                    <section>
+                                        <ul class="params-list">
+                                            <li class="params-list-item">
+                                                <div class="params-list-key">
+                                                    <span class="block">صفحه نمایش رنگی</span>
+                                                </div>
+                                                <div class="params-list-value">
+                                                    <span class="block"> بله </span>
+                                                </div>
+                                            </li>
+                                            <li class="params-list-item">
+                                                <div class="params-list-key">
+                                                    <span class="block">صفحه نمایش لمسی</span>
+                                                </div>
+                                                <div class="params-list-value">
+                                                    <span class="block">بله</span>
+                                                </div>
+                                            </li>
+                                            <li class="params-list-item">
+                                                <div class="params-list-key">
+                                                    <span class="block">فناوری</span>
+                                                </div>
+                                                <div class="params-list-value">
+                                                    <span class="block">Dynamic AMOLED</span>
+                                                </div>
+                                            </li>
+                                            <li class="params-list-item">
+                                                <div class="params-list-key">
+                                                    <span class="block">بازه‌ی اندازه صفحه نمایش</span>
+                                                </div>
+                                                <div class="params-list-value">
+                                                    <span class="block">6.0 اینچ و بزرگتر</span>
+                                                </div>
+                                            </li>
+                                            <li class="params-list-item">
+                                                <div class="params-list-key">
+                                                    <span class="block">اندازه</span>
+                                                </div>
+                                                <div class="params-list-value">
+                                                    <span class="block">6.3 اینچ</span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </section>
+                                </article>
+                            </div>
+                          
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-12 col-md-12 col-xs-12 pr order-1 d-block">
+        <div class="slider-widget-products slider-content-tabs">
+            <div class="widget widget-product card slider-content-tabs">
+                <header class="card-header header-product">
+                    <span class="title-one">محصولات مرتبط</span>
+                    <h3 class="card-title"></h3>
+                </header>
+                <div class="product-carousel owl-carousel owl-theme owl-rtl owl-loaded owl-drag">
+                    <div class="owl-stage-outer">
+                        <div class="owl-stage"
+                            style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 1612px;">
+                            <div class="owl-item tab-item active" style="width: 312.25px; margin-left: 10px;">
+                                <div class="item">
+                                    <a href="#" class="d-block hover-img-link">
+                                        <img src="assets/images/slider-product/Samsung-S10Plus.jpg" class="img-fluid"
+                                            alt="">
+                                    </a>
+                                    <h2 class="post-title">
+                                        <a href="#">
+                                            سامسونگ گلکسی اس 10 پلاس – 128 گیگابایت – دو سیم کارت
+                                        </a>
+                                    </h2>
+                                    <div class="price">
+                                        <del><span>۱۲,۰۰۰,۰۰۰<span>تومان</span></span></del>
+                                        <ins><span>۱۰,۵۰۰,۰۰۰<span>تومان</span></span></ins>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="owl-item tab-item active" style="width: 312.25px; margin-left: 10px;">
+                                <div class="item">
+                                    <a href="#" class="d-block hover-img-link">
+                                        <img src="assets/images/slider-product/huawei-p-smart.jpg" class="img-fluid"
+                                            alt="">
+                                    </a>
+                                    <h2 class="post-title">
+                                        <a href="#">
+                                            هوآوی مدل P Smart 2019 دو سیم کارت ظرفیت 64 گیگابایت
+                                        </a>
+                                    </h2>
+                                    <div class="price">
+                                        <del><span>۳,۲۰۰,۰۰۰<span>تومان</span></span></del>
+                                        <ins><span>۲,۵۰۰,۰۰۰<span>تومان</span></span></ins>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="owl-item tab-item active" style="width: 312.25px; margin-left: 10px;">
+                                <div class="item">
+                                    <a href="#" class="d-block hover-img-link">
+                                        <img src="assets/images/slider-product/iphone-xs-max-space.jpg"
+                                            class="img-fluid" alt="">
+                                    </a>
+                                    <h2 class="post-title">
+                                        <a href="#">
+                                            اپل آیفون ایکس اس مکس – 256 گیگابایت – دو سیم کارت
+                                        </a>
+                                    </h2>
+                                    <div class="price">
+                                        <del><span>۳,۵۰۰,۰۰۰<span>تومان</span></span></del>
+                                        <ins><span>۲,۰۰۰,۰۰۰<span>تومان</span></span></ins>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="owl-item tab-item active" style="width: 312.25px; margin-left: 10px;">
+                                <div class="item">
+                                    <a href="#" class="d-block hover-img-link">
+                                        <img src="assets/images/slider-product/honer.jpg" class="img-fluid" alt="">
+                                    </a>
+                                    <h2 class="post-title">
+                                        <a href="#">
+                                            هواوی هانر ویوو 20 – 256 گیگابایت – دو سیم کارت
+                                        </a>
+                                    </h2>
+                                    <div class="price">
+                                        <del><span>۶,۵۰۰,۰۰۰<span>تومان</span></span></del>
+                                        <ins><span>۴,۲۰۰,۰۰۰<span>تومان</span></span></ins>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="owl-item tab-item" style="width: 312.25px; margin-left: 10px;">
+                                <div class="item">
+                                    <a href="#" class="d-block hover-img-link">
+                                        <img src="assets/images/slider-product/huawei.jpg" class="img-fluid" alt="">
+                                    </a>
+                                    <h2 class="post-title">
+                                        <a href="#">
+                                            هواوی پی 20 پرو 128 گیگابایت – دو سیم کارت
+                                        </a>
+                                    </h2>
+                                    <div class="price">
+                                        <del><span>۷,۵۰۰,۰۰۰<span>تومان</span></span></del>
+                                        <ins><span>۶,۰۰۰,۰۰۰<span>تومان</span></span></ins>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- arshive-product----------------------->
+
+    <!-- footer-------------------------------->
+   
+    <!-- footer------------------------------------------->
+    <!-- scroll_Progress------------------------->
+    <div class="progress-wrap">
+        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+        </svg>
+    </div>
+    <!-- scroll_Progress------------------------->
+    <!-- Page Loader----------------------------->
+    <div class="P-loader">
+        <div class="P-loader-content">
+            <div class="logo-loader">
+                <img src="assets/images/logo.png" alt="logo">
+            </div>
+            <div class="pic-loader text-center">
+                <img src="assets/images/three-dots.svg" width="50" alt="">
+            </div>
+        </div>
+    </div>
+    <!-- Page Loader----------------------------->
+
+</body>
+<!-- file js---------------------------------------------------->
+<script src="~/assets/js/vendor/jquery-3.2.1.min.js"></script>
+<script src="~/assets/js/vendor/bootstrap.js"></script>
+<!-- plugin----------------------------------------------------->
+<script src="~/assets/js/vendor/owl.carousel.min.js"></script>
+<script src="~/assets/js/vendor/jquery.countdown.js"></script>
+<script src="~/assets/js/vendor/lightgallery-all.js"></script>
+<script src="~/assets/js/vendor/jquery.ez-plus.js"></script>
+<script src="~/assets/js/vendor/jquery.nice-select.min.js"></script>
+<!-- main js---------------------------------------------------->
+<script src="~/assets/js/main.js"></script>
+
+</html>
