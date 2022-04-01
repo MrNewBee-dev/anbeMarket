@@ -13,9 +13,9 @@ namespace Anbe.Models.ViewModels
 {
     public class ProductViewModel
     {
-        public ProductViewModel(IEnumerable<TreeViewCategory> viewCategories)
+        public ProductViewModel(BooksSubCategoriesViewModel _SubCategoriesVM)
         {
-            Categories = viewCategories;
+            SubCategoriesVM = _SubCategoriesVM;
         }
 
 
@@ -24,9 +24,10 @@ namespace Anbe.Models.ViewModels
 
         }
 
+        public BooksSubCategoriesViewModel SubCategoriesVM { get; set; }
         public IEnumerable<TreeViewCategory> Categories { get; set; }
         
-        [Required]
+        
         public int ProductId { get; set; }
         [Display(Name = "نامحصول")]
         public string ProductName { get; set; }
@@ -64,19 +65,24 @@ namespace Anbe.Models.ViewModels
 
        public List<string> DisplayName { get; set; }
 
+        [Required(ErrorMessage = "وارد نمودن {0} الزامی است.")]
+        [Display(Name = "رنگ‌ها")]
+        public string ColorId { get; set; }
+
         public List<string> Value { get; set; }
 
         [Display(Name = "عکس محصول")]
         public string Image { get; set; }
      //   public virtual List<Color> Colors { get; set; }
         public virtual ICollection<ProductDetails> ProductDetails { get; set; }
+        public List<Color> Colors { get; set; }
 
     }
     public class ProductViewModelE
     {
-        public ProductViewModelE(IEnumerable<TreeViewCategory> viewCategories)
+        public ProductViewModelE(BooksSubCategoriesViewModel _SubCategoriesVM)
         {
-            Categories = viewCategories;
+            SubCategoriesVM = _SubCategoriesVM;
         }
 
 
@@ -84,16 +90,23 @@ namespace Anbe.Models.ViewModels
         {
 
         }
+        
+        
+        public int[] ColorId { get; set; }
+        //public string[] ColorIdies { get; set; }
 
+        public BooksSubCategoriesViewModel SubCategoriesVM { get; set; }
         public IEnumerable<TreeViewCategory> Categories { get; set; }
+        
+        public List<Color> Colors { get; set; }
 
         [Required]
 
         public int ProductId { get; set; }
-        [Required]
+        
         [Display(Name = "نامحصول")]
         public string ProductName { get; set; }
-        [Required]
+        
         [Display(Name = "کد محصول")]
         public int ProductNumber { get; set; }//code mahsol
         [Display(Name = "تعداد محصول")]
@@ -136,6 +149,18 @@ namespace Anbe.Models.ViewModels
         public virtual ICollection<ProductDetails> ProductDetails { get; set; }
 
     }
+    public class BooksSubCategoriesViewModel
+    {
+        public BooksSubCategoriesViewModel(List<TreeViewCategory> _Categories, int[] _CategoryID)
+        {
+            Categories = _Categories;
+            CategoryID = _CategoryID;
+        }
+
+        public List<TreeViewCategory> Categories { get; set; }
+        public int[] CategoryID { get; set; }
+    }
+
     public class ProductViewModelViews
     {
         [Required]

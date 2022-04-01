@@ -43,15 +43,22 @@
                             </div>
                             <div class="card-body">
                                 <ul id="category" class="demo1">
-                                    @foreach (var item in Model.Categories)
+                                    @foreach (var item in Model.SubCategoriesVM.Categories)
                                     {
                                         <li>
                                             @if (item.ParentIDCat == null)
                                             {
                                                 @item.CategoryName
-                                            }else{
-                                            <input type="radio" name="CategoryID" value="@item.CategoryID" /> @item.CategoryName}
-                                            @await Html.PartialAsync("_SubCategories", item.SubCategories)
+                                            }else if(Model.SubCategoriesVM.CategoryID.Contains(item.CategoryID)){
+
+                                                <input type="radio" name="CategoryID" value="@item.CategoryID" checked /> @item.CategoryName
+                                            }
+                                            else
+                                            {
+                                                <input type="radio" name="CategoryID" value="@item.CategoryID"  /> @item.CategoryName
+                                            }
+                                            @{Model.SubCategoriesVM.Categories = item.SubCategories;}
+                                            @await Html.PartialAsync("_SubCategories",Model.SubCategoriesVM )
 
                                         </li>
                                     }
@@ -75,7 +82,7 @@
                                  <div class="col-md-6">
                                     <div class="form-group">
                                         
-                                        <input hidden asp-for="ProductId" id="ProductId" class="form-control" >
+                                        <input  hidden asp-for="ProductId" id="ProductId" class="form-control" >
                                         <span asp-validation-for="ProductName" class="text-danger"></span>
                                     </div>
                                 </div>
@@ -117,6 +124,7 @@
                                     </div>
                                 </div>
                             </div>
+
                             <div class="row">
                                 <div class="col-md-6">
 
@@ -140,7 +148,17 @@
                                 </div>
 
                             </div>
+                             <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
 
+                                        <label asp-for="ColorId" class="form-control-label"></label>
+                                        <select id="ColorId" asp-for="ColorId" asp-items="ViewBag.selectColor" class="select2 js-states form-control">
+                                            <option value="">انتخاب کنید</option>
+                                        </select>
+                                        <span asp-validation-for="ColorId" class="text-danger"></span>
+                                    </div>
+                                </div>
                             <div class="row">
 
                                 <div class="col-md-12">
@@ -221,6 +239,7 @@
                 </div>
             </div>
         </div>
+        </div>
     </form>
 
 </div>
@@ -257,27 +276,29 @@
         });
 
            $('#btnAddProduct').on('click', function () {
-
+               var agori =$( "#ColorId" ).val() || [];
+               var pofak = agori.map(el=>parseInt(el));
             var data = new FormData();
- 
+            
+            console.log(pofak);
             //دریافت مقادیر از تکس باکس ها و....
+              //دریافت مقادیر از تکس باکس ها و....
             data.append("ProductName", $("#ProductName").val());
-            data.append("ProductId", $("#ProductId").val());
            // data.append("Brand", $("#Brand").val());
             data.append("Price", $("#Price").val());
             data.append("PricetoziKonande", $("#PricetoziKonande").val());
             data.append("ProductNumber", $("#ProductNumber").val());
             data.append("ProductTotal", $("#ProductTotal").val());
             data.append("ProductDescription", $("#ProductDescription").val());
+            data.append("ProductId", $("#ProductId").val());
        //     data.append("Displayed", $("#Displayed").attr("checked") ? true : false);
           //  data.append("CategoryID", $("#CategoryID").attr("checked").val());
             data.append("CategoryId", $("input[name=CategoryID]:checked" ).val());
 
             data.append("Nahveyetasviye", $("#Nahveyetasviye").attr("checked") ? true : false);
             data.append("IsPublish", $("#IsPublish").attr("checked") ? true : false);
-            //data.append("CategoryId", $('#Category').find('option:selected').val());
+            data.append("jojo", agori);
             data.append("Description", $("#Description").val());
-
 
             //دریافت عکس های انتخاب شده توسط کاربر و قرار دادن عکس ها در متغیر data
             var productImages = document.getElementById("Images");

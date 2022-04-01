@@ -1,12 +1,15 @@
 ﻿using Anbe.Areas.AnbeAdmin.Models;
+using Anbe.Areas.AnbeAdmin.Models.ViewModels;
 using Anbe.Data;
 using Anbe.Models;
+using Anbe.Models.ViewModel;
 using Anbe.Models.ViewModels;
 using BookShop.Models.Repository;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Routing;
 using Microsoft.EntityFrameworkCore;
 using ReflectionIT.Mvc.Paging;
@@ -211,10 +214,15 @@ namespace Nazar1988.Areas.MyMaster.Controllers
         public IActionResult Create()
         {
 
-            var viewModel = new ProductViewModel(_repository.GetAllCategories());
+            BooksSubCategoriesViewModel subCategoriesVM = new  BooksSubCategoriesViewModel(_repository.GetAllCategories(),null); 
+          
+            var viewModel = new ProductViewModel(subCategoriesVM);
+
+            ViewBag.selectColor = new SelectList(_context.Color.Select(t => new ColorList { EsmeRang = t.EsmeRang, Id = t.Id }), "Id", "EsmeRang");
+
             return View(viewModel);
         }
-        [HttpPost]
+        
 
 
 
@@ -241,7 +249,7 @@ namespace Nazar1988.Areas.MyMaster.Controllers
                 List<string> name = new List<string>();
                 name.Add("logo.png");
                 List<Product_Category> categories = new List<Product_Category>();
-
+                List<Product_Color> colorsList = new List<Product_Color>();
 
                 var UploadsRootFoolder = Path.Combine(_env.WebRootPath, "GalleryFiles");
                 if (!Directory.Exists(UploadsRootFoolder))
@@ -339,6 +347,16 @@ namespace Nazar1988.Areas.MyMaster.Controllers
 
                         await _context.Product_Categories.AddRangeAsync(categories);
                     }
+                    int[] cl = viewModel.ColorId.Split(',').Select(n => Convert.ToInt32(n)).ToArray();
+                    if (cl != null)
+                    {
+                        for (int i = 0; i < cl.Length; i++)
+                        {
+                            Product_Color color = new Product_Color { ColorId = cl[i], ProductId = product.ProductID };
+                            colorsList.Add(color);
+                        }
+                        await _context.Product_Color.AddRangeAsync(colorsList);
+                    }
 
                     await _context.SaveChangesAsync();
                     Transaction.Commit();
@@ -346,13 +364,15 @@ namespace Nazar1988.Areas.MyMaster.Controllers
                 }
                 catch
                 {
-                    return RedirectToAction("Index", new { Msg = "Failed" });
+                    ViewBag.err = "خطایی رخ داده است";
+                    return Json(Url.Action("Create", "Products"));
                 }
             }
             else
             {
-                viewModel.Categories = _repository.GetAllCategories();
-                return View(viewModel);
+                //  viewModel.BooksSubCategoriesViewModels = new BooksSubCategoriesViewModel(_repository.GetAllCategories(), null); 
+                ViewBag.err = "خطایی رخ داده است";
+                return Json(Url.Action("Create", "Products"));
             }
         }
         [HttpGet]
@@ -362,33 +382,35 @@ namespace Nazar1988.Areas.MyMaster.Controllers
             {
                 return NotFound();
             }
-
+            
             var product = await _context.Products.Where(m => m.ProductID == id).Select(x => new ProductViewModelE
             {
-                Categories = _repository.GetAllCategories(),
+                
                 Price = x.Price,
                 PricetoziKonande = x.PriceToziKonande,
                 IsPublish = x.IsPublish
-                ,ProductName =x.ProductName,
+                , ProductName = x.ProductName,
                 Nahveyetasviye = x.NAhveyetasviye,
                 ProductDescription = x.ProductDescription,
                 ProductDetails = x.ProductDetails,
                 ProductId = x.ProductID
-
-
+                , ColorId = x.ProductColors.Select(q => q.Colors.Id).ToArray()
+                ,CategoryId = x.book_Categories.Select(p => p.Category.CategoryID).ToArray(),
+                SubCategoriesVM = new BooksSubCategoriesViewModel(_repository.GetAllCategories(), x.book_Categories.Select(p => p.Category.CategoryID).ToArray())
             }).FirstOrDefaultAsync();
             if (product == null)
             {
                 return NotFound();
             }
+            ViewBag.selectColor = new SelectList(_context.Color.Select(t => new ColorList { EsmeRang = t.EsmeRang, Id = t.Id }), "Id", "EsmeRang");
 
-            return View(product);
+             return View(product);
 
 
         }
         [HttpPost]
         [AutoValidateAntiforgeryToken]
-        public async Task<IActionResult> Edit(ProductViewModelE viewModel)
+        public async Task<IActionResult> Edit(ProductViewModelE viewModel,string jojo)
         {
 
             var userid = User.FindFirstValue(ClaimTypes.NameIdentifier);
@@ -400,6 +422,7 @@ namespace Nazar1988.Areas.MyMaster.Controllers
                 {
                     return NotFound();
                 }
+                
                 ProductFound.IsPublish = viewModel.IsPublish;
                 ProductFound.Price = viewModel.Price;
                 ProductFound.PriceToziKonande = viewModel.PricetoziKonande;
@@ -408,11 +431,80 @@ namespace Nazar1988.Areas.MyMaster.Controllers
                 ProductFound.ProductNumber = viewModel.ProductNumber;
                 ProductFound.ProductTotal = viewModel.ProductTotal;
                 ProductFound.IsPublish = viewModel.IsPublish;
-
                 _context.Products.Update(ProductFound);
+
+                var detailsProduct = _context.ProductDetails.Where(x => x.ProductsProductID == viewModel.ProductId).ToList();
+
+                
+
+                List<ProductDetails> productDetailsList = new List<ProductDetails>();
+                if (viewModel.Value != null)
+                {
+                    _context.ProductDetails.RemoveRange(detailsProduct);
+                    for (int i = 0; i < viewModel.Value.Count; i++)
+                    {
+                        ProductDetails productDetails = new ProductDetails() { Display = viewModel.Value[i], Vizhegi = viewModel.DisplayName[i], ProductsProductID = viewModel.ProductId };
+
+                        productDetailsList.Add(productDetails);
+                    }
+                    await _context.ProductDetails.AddRangeAsync(productDetailsList);
+                    await _context.SaveChangesAsync();
+                }
+
+
+
+
+
+
+
+
+                var CategoryProduct = (from a in _context.Product_Categories where (a.ProductID == viewModel.ProductId) select a.CategoryID).ToArray();
+             
+
+                var deleteCategoryProduct =  CategoryProduct.Except(viewModel.CategoryId);
+             
+
+                var addCategoryProduct = viewModel.CategoryId.Except(CategoryProduct);
+             
+
+
+                if (deleteCategoryProduct.Count() != 0)
+                {
+                    _context.RemoveRange(deleteCategoryProduct.Select(a => new Product_Category { CategoryID = a, ProductID = viewModel.ProductId }).ToList());
+                }
+                if (addCategoryProduct.Count() != 0)
+                {
+                    _context.AddRange(addCategoryProduct.Select(a => new Product_Category { CategoryID = a, ProductID = viewModel.ProductId }).ToList());
+                }
+
+                var productColor = (from b in _context.Product_Color where (b.ProductId == viewModel.ProductId) select b.ColorId).ToArray();
+
+                if (jojo !=null)
+                {
+                    int[] cl = jojo.Split(',').Select(n => Convert.ToInt32(n)).ToArray();
+
+
+
+                    var deleteColorProduct = productColor.Except(cl);
+                    var addColorProduct = cl.Except(productColor);
+                    if (deleteColorProduct.Count() != 0)
+                    {
+                        _context.RemoveRange(deleteColorProduct.Select(a => new Product_Color { ColorId = a, ProductId = viewModel.ProductId }).ToList());
+                    }
+                    if (addColorProduct.Count() != 0)
+                    {
+                        _context.AddRange(addColorProduct.Select(a => new Product_Color { ColorId = a, ProductId = viewModel.ProductId }).ToList());
+                    }
+
+                }
+
+
+
+
                 await _context.SaveChangesAsync();
+                return Json(Url.Action("Index", "Products"));
             }
-            return Json(Url.Action("Index", "Products"));
+            return Json(Url.Action("Create", "Products"));
         }
         //[Route("Upload")]
         //public IActionResult FileUploader(int? id)

@@ -81,6 +81,7 @@ namespace Anbe.Data
         public DbSet<Product> Products { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Product_Category> Product_Categories { get; set; }
+        public DbSet<Product_Color> Product_Color { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderDetail> OrderDetails { get; set; }
         public DbSet<ProductDetails> ProductDetails { get; set; }

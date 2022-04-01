@@ -33,7 +33,7 @@ namespace Anbe.Migrations
 
                     b.HasKey("ID");
 
-                    b.ToTable("ChatRooms");
+                    b.ToTable("ChatRooms", (string)null);
                 });
 
             modelBuilder.Entity("Anbe.Areas.AnbeAdmin.Models.Color", b =>
@@ -52,7 +52,7 @@ namespace Anbe.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Color");
+                    b.ToTable("Color", (string)null);
                 });
 
             modelBuilder.Entity("Anbe.Areas.AnbeAdmin.Models.DastebandiKolli", b =>
@@ -69,7 +69,7 @@ namespace Anbe.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("DastebandiKollis");
+                    b.ToTable("DastebandiKollis", (string)null);
                 });
 
             modelBuilder.Entity("Anbe.Areas.AnbeAdmin.Models.JadvaleVaset", b =>
@@ -85,7 +85,7 @@ namespace Anbe.Migrations
 
                     b.HasIndex("DastebandiKolliId");
 
-                    b.ToTable("JadvaleVasets");
+                    b.ToTable("JadvaleVasets", (string)null);
                 });
 
             modelBuilder.Entity("Anbe.Areas.AnbeAdmin.Models.Product_Color", b =>
@@ -100,7 +100,7 @@ namespace Anbe.Migrations
 
                     b.HasIndex("ColorId");
 
-                    b.ToTable("Product_Color");
+                    b.ToTable("Product_Color", (string)null);
                 });
 
             modelBuilder.Entity("Anbe.Areas.AnbeAdmin.Models.ProductDetails", b =>
@@ -124,7 +124,7 @@ namespace Anbe.Migrations
 
                     b.HasIndex("ProductsProductID");
 
-                    b.ToTable("ProductDetails");
+                    b.ToTable("ProductDetails", (string)null);
                 });
 
             modelBuilder.Entity("Anbe.Areas.Identity.Data.ApplicationRole", b =>
@@ -279,7 +279,7 @@ namespace Anbe.Migrations
 
                     b.HasIndex("ParentCategoryID");
 
-                    b.ToTable("Categories");
+                    b.ToTable("Categories", (string)null);
                 });
 
             modelBuilder.Entity("Anbe.Models.Discount", b =>
@@ -298,7 +298,7 @@ namespace Anbe.Migrations
 
                     b.HasKey("ProductId");
 
-                    b.ToTable("Discounts");
+                    b.ToTable("Discounts", (string)null);
                 });
 
             modelBuilder.Entity("Anbe.Models.Product", b =>
@@ -352,7 +352,7 @@ namespace Anbe.Migrations
 
                     b.HasIndex("ApplicationUsersId");
 
-                    b.ToTable("Products");
+                    b.ToTable("Products", (string)null);
                 });
 
             modelBuilder.Entity("Anbe.Models.Product_Category", b =>
@@ -367,7 +367,7 @@ namespace Anbe.Migrations
 
                     b.HasIndex("CategoryID");
 
-                    b.ToTable("Product_Categories");
+                    b.ToTable("Product_Categories", (string)null);
                 });
 
             modelBuilder.Entity("Anbe.Models.Wallet", b =>
@@ -410,7 +410,7 @@ namespace Anbe.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("wallets");
+                    b.ToTable("wallets", (string)null);
                 });
 
             modelBuilder.Entity("Anbe.Models.WalleTType", b =>
@@ -425,7 +425,7 @@ namespace Anbe.Migrations
 
                     b.HasKey("TypeId");
 
-                    b.ToTable("walleTTypes");
+                    b.ToTable("walleTTypes", (string)null);
                 });
 
             modelBuilder.Entity("Anbe.Order", b =>
@@ -466,7 +466,7 @@ namespace Anbe.Migrations
 
                     b.HasIndex("ApplicationUsersId");
 
-                    b.ToTable("Orders");
+                    b.ToTable("Orders", (string)null);
                 });
 
             modelBuilder.Entity("Anbe.OrderDetail", b =>
@@ -498,7 +498,7 @@ namespace Anbe.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("OrderDetails");
+                    b.ToTable("OrderDetails", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -614,7 +614,7 @@ namespace Anbe.Migrations
 
                     b.HasIndex("ChatRoomId");
 
-                    b.ToTable("ChatMessages");
+                    b.ToTable("ChatMessages", (string)null);
                 });
 
             modelBuilder.Entity("Anbe.Areas.AnbeAdmin.Models.JadvaleVaset", b =>

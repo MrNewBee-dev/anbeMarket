@@ -127,33 +127,21 @@
                                         <div class="product-variants">
                                             <span>رنگ بندی: </span>
                                             <ul class="js-product-variants">
+                                              @foreach (var item in @Model.Colors)
+                                             {
                                                 <li class="ui-variant">
                                                     <label for="#" class="ui-variant-color">
                                                         <span class="ui-variant-shape"
-                                                            style="background-color: #56abef"></span>
+                                                            style="background-color: @item.HexRag"></span>
                                                         <input type="radio" value="4" name="color" id="variant"
                                                             class="js-variant-selector" checked="">
                                                         <span class="ui-variant-check"></span>
                                                     </label>
                                                 </li>
-                                                <li class="ui-variant">
-                                                    <label for="#" class="ui-variant-color">
-                                                        <span class="ui-variant-shape"
-                                                            style="background-color: #a97eca"></span>
-                                                        <input type="radio" value="4" name="color" id="variant"
-                                                            class="js-variant-selector">
-                                                        <span class="ui-variant-check"></span>
-                                                    </label>
-                                                </li>
-                                                <li class="ui-variant">
-                                                    <label for="#" class="ui-variant-color">
-                                                        <span class="ui-variant-shape"
-                                                            style="background-color: #4e4c4c"></span>
-                                                        <input type="radio" value="4" name="color" id="variant"
-                                                            class="js-variant-selector">
-                                                        <span class="ui-variant-check"></span>
-                                                    </label>
-                                                </li>
+                                                 
+                                             }
+                                                
+                                              
                                             </ul>
                                         </div>
                                         <div class="product-params pt-3">

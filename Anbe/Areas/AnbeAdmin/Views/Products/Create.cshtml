@@ -8,6 +8,12 @@
 
 <div class="container-fluid">
     <form asp-action="Create" enctype="multipart/form-data">
+        <div class="bg-danger">
+            @if(ViewBag.err !=null)
+            {
+                    @ViewBag.err         
+            }
+        </div>
         <div class="row">
             <div class="col-md-4">
                 <div class="row">
@@ -43,7 +49,7 @@
                             </div>
                             <div class="card-body">
                                 <ul id="category" class="demo1">
-                                    @foreach (var item in Model.Categories)
+                                    @foreach (var item in Model.SubCategoriesVM.Categories)
                                     {
                                         <li>
                                             @if (item.ParentIDCat == null)
@@ -51,7 +57,8 @@
                                                 @item.CategoryName
                                             }else{
                                             <input type="radio" name="CategoryID" value="@item.CategoryID" /> @item.CategoryName}
-                                            @await Html.PartialAsync("_SubCategories", item.SubCategories)
+                                            @{Model.SubCategoriesVM.Categories = item.SubCategories;}
+                                            @await Html.PartialAsync("_SubCategories",Model.SubCategoriesVM)
 
                                         </li>
                                     }
@@ -120,7 +127,17 @@
                                 </div>
 
                             </div>
+                             <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
 
+                                        <label asp-for="ColorId" class="form-control-label"></label>
+                                        <select id="ColorId" asp-for="ColorId" asp-items="ViewBag.selectColor" class="select2 js-states form-control" multiple>
+                                            <option value="">انتخاب کنید</option>
+                                        </select>
+                                        <span asp-validation-for="ColorId" class="text-danger"></span>
+                                    </div>
+                                </div>
                             <div class="row">
                                 <div class="col-md-6">
 
@@ -199,6 +216,7 @@
                 </div>
             </div>
         </div>
+        </div>
     </form>
 
 </div>
@@ -236,6 +254,10 @@
 
            $('#btnAddProduct').on('click', function () {
 
+               var agori =$( "#ColorId" ).val() || [];
+              // var agori =["1", "2", "4", "3"];
+               //console.log(agori);
+
             var data = new FormData();
  
             //دریافت مقادیر از تکس باکس ها و....
@@ -252,7 +274,7 @@
 
             data.append("Nahveyetasviye", $("#Nahveyetasviye").attr("checked") ? true : false);
             data.append("IsPublish", $("#IsPublish").attr("checked") ? true : false);
-            //data.append("CategoryId", $('#Category').find('option:selected').val());
+            data.append("ColorId", agori);
             data.append("Description", $("#Description").val());
 
 

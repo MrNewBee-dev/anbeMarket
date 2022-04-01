@@ -1,12 +1,31 @@
 ﻿
-@model IEnumerable<BookShop.Models.ViewModels.TreeViewCategory>
+@model Anbe.Models.ViewModels.BooksSubCategoriesViewModel
 
 <ul>
-    @foreach (var item in Model)
+    @foreach (var item in Model.Categories)
     {
         <li>
-            <input type="radio" value="@item.CategoryID" name="CategoryID" id="CategoryID" /> @item.CategoryName
-            @await Html.PartialAsync("_SubCategories", item.SubCategories)
+
+            @if (Model.CategoryID !=null)
+           {
+               @if (Model.CategoryID.Contains(item.CategoryID)){
+                <input type="radio" name="CategoryID" value="@item.CategoryID" checked/> @item.CategoryName}
+                else{             
+                
+                    <input type="radio" name="CategoryID" value="@item.CategoryID" /> @item.CategoryName
+                        }
+            }    
+           
+
+                            
+           else{
+                        <input type="radio" name="CategoryID" value="@item.CategoryID" /> @item.CategoryName
+                }
+           
+
+            
+            @{Model.Categories = item.SubCategories;}
+                                            @await Html.PartialAsync("_SubCategories",Model )
         </li>
     }
 

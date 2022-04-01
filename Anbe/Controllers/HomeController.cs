@@ -44,10 +44,11 @@ namespace Anbe.Controllers
               NameMaqaze =  x.ApplicationUsers.NameMaqaze,
               ProductDescription = x.ProductDescription,
               ProductDetails = x.ProductDetails,
-              
+                Colors = x.ProductColors.Select(y=>y.Colors).ToList() 
 
             })
                 .FirstOrDefaultAsync();
+            
             
             if (product == null)
             {
