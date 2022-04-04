@@ -18,5 +18,6 @@ namespace Anbe.Areas.Identity.Data
 
 
         public virtual List<ApplicationUserRole> Users { get; set; }
+
     }
 }

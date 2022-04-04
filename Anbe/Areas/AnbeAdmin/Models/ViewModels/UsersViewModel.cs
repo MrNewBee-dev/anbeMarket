@@ -38,7 +38,7 @@ namespace Anbe.Models.ViewModels
         [Display(Name = "نقش ها")]
         public IEnumerable<string> Roles { get; set; }
 
-        //public bool PhoneNumberConfirmed { get; set; }
+        public bool Active { get; set; }
 
         //public bool TwoFactorEnabled { get; set; }
 
@@ -54,6 +54,7 @@ namespace Anbe.Models.ViewModels
     }
     public class EditProfileViewModel
     {
+        public bool Active { get; set; }
 
         [Display(Name = "نام ")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
@@ -81,6 +82,8 @@ namespace Anbe.Models.ViewModels
     }
     public class EditProfileManagerViewModel
     {
+        [Display(Name = "فعال")]
+        public bool Active { get; set; }
 
         [Display(Name = "نام ")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنید")]

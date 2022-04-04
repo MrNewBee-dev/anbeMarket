@@ -16,6 +16,7 @@ namespace Anbe.Areas.Identity.Data
         public string Address { get; set; }
 
         public bool ForooshBaste { get; set; }
+        public bool Active { get; set; }
         public DateTime RegisterDate { get; set; }
         public DateTime LastVisitDateTime { get; set; }
 

@@ -46,7 +46,8 @@ namespace Anbe.Areas.AnbeAdmin.Controllers
                 PhoneNumber = x.PhoneNumber,
                 RegisterDate = x.RegisterDate,
                 Roles = x.Roles.Select(u => u.Role.Name),
-                KifePool = x.KifePool
+                KifePool = x.KifePool,
+                Active = x.Active
 
 
             }).ToList();
@@ -71,7 +72,9 @@ namespace Anbe.Areas.AnbeAdmin.Controllers
                 LastName = x.LastName,
                 PhoneNumber = x.PhoneNumber,
                 Roles = x.Roles.Select(u => u.Role.Name),
-                KifePool = x.KifePool
+                KifePool = x.KifePool,
+                Active =x.Active
+                
             }).FirstOrDefaultAsync();
             ViewBag.AllRoles = _roleManager.Roles.ToList();
             return View(Users);
@@ -102,7 +105,7 @@ namespace Anbe.Areas.AnbeAdmin.Controllers
                             user.LastName = viewModel.LastName;
                             user.KifePool = viewModel.KifePool;
                             user.PhoneNumber = viewModel.PhoneNumber;
-
+                            user.Active = viewModel.Active;
 
 
                             Result = await _userManager.UpdateAsync(user);
