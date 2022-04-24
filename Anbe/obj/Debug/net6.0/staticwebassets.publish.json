@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "1D2jQJyfjdtGxV35g+40J0vtcR0Gu8ZNEGkL7zrflmA=",
+  "Hash": "RdEeq/JaF6E0t9VWyMF1GfI2olO8vvPmNRKM0hvD/VY=",
   "Source": "Anbe",
   "BasePath": "_content/Anbe",
   "Mode": "Default",
@@ -18309,6 +18309,23 @@
       "OriginalItemSpec": "wwwroot\\lib\\summernote\\tsconfig.json"
     },
     {
+      "Identity": "C:\\Users\\milad\\Desktop\\test\\anbeMarket\\Anbe\\wwwroot\\Print\\Report4.mrt",
+      "SourceId": "Anbe",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\milad\\Desktop\\test\\anbeMarket\\Anbe\\wwwroot\\",
+      "BasePath": "_content/Anbe",
+      "RelativePath": "Print/Report4.mrt",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Print\\Report4.mrt"
+    },
+    {
       "Identity": "C:\\Users\\milad\\Desktop\\test\\anbeMarket\\Anbe\\wwwroot\\Reports\\license\\license.key",
       "SourceId": "Anbe",
       "SourceType": "Discovered",
@@ -18375,6 +18392,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Reports\\Report3.mrt"
+    },
+    {
+      "Identity": "C:\\Users\\milad\\Desktop\\test\\anbeMarket\\Anbe\\wwwroot\\Reports\\Report4.mrt",
+      "SourceId": "Anbe",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\milad\\Desktop\\test\\anbeMarket\\Anbe\\wwwroot\\",
+      "BasePath": "_content/Anbe",
+      "RelativePath": "Reports/Report4.mrt",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Reports\\Report4.mrt"
     },
     {
       "Identity": "C:\\Users\\milad\\Desktop\\test\\anbeMarket\\Anbe\\wwwroot\\sass\\carbon\\_alert.scss",

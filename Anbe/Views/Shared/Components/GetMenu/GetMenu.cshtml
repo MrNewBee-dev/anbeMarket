@@ -3,9 +3,10 @@
 
 @{
     Layout = null;
-    
+
 }
-@foreach (var item in Model)
+@if (Model !=null) { 
+    @foreach (var item in Model)
 {
     <div class="form-auth-row"> 
              <label  class="ui-checkbox">
@@ -16,4 +17,4 @@
      </div>
 
 }
-        
+        }

@@ -2,6 +2,7 @@
 using Anbe.Areas.AnbeAdmin.Models.ViewModels;
 using Anbe.Areas.Identity.Data;
 using BookShop.Models.ViewModels;
+using Microsoft.AspNetCore.DataProtection.KeyManagement;
 using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
 using System;
@@ -11,6 +12,19 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Anbe.Models.ViewModels
 {
+
+    public class ProductReportViewModel {
+
+        
+        public string PricetoziKonande { get; set; }
+        public string Granty { get; set; }
+        public int Id { get; set; }
+        public string ProductName { get; set; }
+        public string NameMaqaze { get; set; }
+        public string ProductCategoryName { get; set; }
+          public string Colors { get; set; }
+
+    }
     public class ProductViewModel
     {
         public ProductViewModel(BooksSubCategoriesViewModel _SubCategoriesVM)
@@ -78,7 +92,14 @@ namespace Anbe.Models.ViewModels
         public List<Color> Colors { get; set; }
 
     }
-    public class ProductViewModelE
+    public class CheckListViewModel
+    {
+        public string NameMaqaze { get; set; }
+        public string Id { get; set; }
+
+    }
+
+        public class ProductViewModelE
     {
         public ProductViewModelE(BooksSubCategoriesViewModel _SubCategoriesVM)
         {

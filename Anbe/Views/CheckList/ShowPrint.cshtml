@@ -1,0 +1,29 @@
+﻿@using Stimulsoft.Report.Web
+@using Stimulsoft.Report.Mvc
+@{
+    ViewData["Title"] = "Home Page";
+    Layout = null;
+}
+
+<h2>ShowPrint</h2>
+@Html.StiNetCoreViewer(new StiNetCoreViewerOptions()
+{
+    Actions =
+    {
+        GetReport="Print",
+        ViewerEvent = "ViewEvent"
+    },
+    Appearance =
+	{
+		FullScreenMode = true
+        
+	},
+    Toolbar =
+
+{
+
+ViewMode = StiWebViewMode.Continuous
+
+}
+    
+}))

@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Anbe.Areas.Identity.Data
 {
@@ -18,6 +20,14 @@ namespace Anbe.Areas.Identity.Data
 
 
         public virtual List<ApplicationUserRole> Users { get; set; }
+
+
+        [ForeignKey("role")]
+        [Column(TypeName = "nvarchar(450)")]
+        public string roleParentID { get; set; }
+
+        public ApplicationRole role { get; set; }
+        public List<ApplicationRole> roles { get; set; }
 
     }
 }

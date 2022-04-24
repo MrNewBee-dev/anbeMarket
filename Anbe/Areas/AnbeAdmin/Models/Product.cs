@@ -25,6 +25,8 @@ namespace Anbe.Models
         public virtual List<Product_Color> ProductColors { get; set; }
 
         public string ProductUrl { get; set; }
+        public string Granty { get; set; }
+
 
         public Discount DiscountId { get; set; }
 

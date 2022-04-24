@@ -146,12 +146,17 @@ namespace Anbe.Migrations
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
 
+                    b.Property<string>("roleParentID")
+                        .HasColumnType("nvarchar(450)");
+
                     b.HasKey("Id");
 
                     b.HasIndex("NormalizedName")
                         .IsUnique()
                         .HasDatabaseName("RoleNameIndex")
                         .HasFilter("[NormalizedName] IS NOT NULL");
+
+                    b.HasIndex("roleParentID");
 
                     b.ToTable("AspNetRoles", (string)null);
                 });
@@ -319,6 +324,9 @@ namespace Anbe.Migrations
 
                     b.Property<DateTime?>("CreateDate")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("Granty")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ImagePath")
                         .HasColumnType("nvarchar(max)");
@@ -671,6 +679,15 @@ namespace Anbe.Migrations
                     b.Navigation("Products");
                 });
 
+            modelBuilder.Entity("Anbe.Areas.Identity.Data.ApplicationRole", b =>
+                {
+                    b.HasOne("Anbe.Areas.Identity.Data.ApplicationRole", "role")
+                        .WithMany("roles")
+                        .HasForeignKey("roleParentID");
+
+                    b.Navigation("role");
+                });
+
             modelBuilder.Entity("Anbe.Areas.Identity.Data.ApplicationUserRole", b =>
                 {
                     b.HasOne("Anbe.Areas.Identity.Data.ApplicationRole", "Role")
@@ -850,6 +867,8 @@ namespace Anbe.Migrations
             modelBuilder.Entity("Anbe.Areas.Identity.Data.ApplicationRole", b =>
                 {
                     b.Navigation("Users");
+
+                    b.Navigation("roles");
                 });
 
             modelBuilder.Entity("Anbe.Areas.Identity.Data.ApplicationUser", b =>

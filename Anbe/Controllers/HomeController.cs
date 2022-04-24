@@ -126,7 +126,7 @@ namespace Anbe.Controllers
                 }
             }
 
-            var proudctlist = list.Where(x => x.ApplicationUsers.ForooshBaste != true && x.IsPublish == true).Select(x => new ProductViewModel
+            var proudctlist = list.Where(x => x.ApplicationUsers.ForooshBaste != true && x.IsPublish == true &&  x.ApplicationUsers.Active == true).Select(x => new ProductViewModel
             {
                 ProductName = x.ProductName,
                 ProductDescription = x.ProductDescription,
@@ -139,7 +139,7 @@ namespace Anbe.Controllers
             }).ToList();
             if (!User.IsInRole("Foroshande") && !User.IsInRole("BonakDar") && !User.IsInRole("SuperAdmin"))
             {
-               proudctlist = list.Where(x=>x.ApplicationUsers.ForooshBaste != true && x.IsPublish == true).Where(x=>x.ApplicationUsers.Roles.Where(y=>y.UserId == x.ApplicationUsersId).Select(r => r.Role.Name).FirstOrDefault() == "Foroshande").Select(x => new ProductViewModel
+               proudctlist = list.Where(x=>x.ApplicationUsers.ForooshBaste != true && x.IsPublish == true &&  x.ApplicationUsers.Active == true).Where(x=>x.ApplicationUsers.Roles.Where(y=>y.UserId == x.ApplicationUsersId).Select(r => r.Role.Name).FirstOrDefault() == "Foroshande").Select(x => new ProductViewModel
                {
                  ProductName = x.ProductName,
                  ProductDescription = x.ProductDescription, 
@@ -147,7 +147,7 @@ namespace Anbe.Controllers
                  NameMaqaze = x.ApplicationUsers.NameMaqaze,
                  PricetoziKonande = 0,
                    Image = (JsonConvert.DeserializeObject<List<string>>(x.ImagePath).FirstOrDefault().ToString() == null) ? "2544106a-7535-426b-8dff-88b47ebf2de9.jpg" : JsonConvert.DeserializeObject<List<string>>(x.ImagePath).FirstOrDefault().ToString()
-
+                   ,ProductId =x.ProductID
 
                }).ToList();
             }

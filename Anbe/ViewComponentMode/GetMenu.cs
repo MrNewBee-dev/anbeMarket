@@ -12,9 +12,14 @@ namespace ViewComponentSample.ViewComponents
         public IViewComponentResult Invoke(int id = 1)
         {
             var item = _anbeContext.Categories.Where(x => x.CategoryID == id).FirstOrDefault();
-            if (item.ParentCategoryID == null) return View(viewName: "GetMenu", _anbeContext.Categories.Where(x => x.ParentCategoryID == id).ToList());
-            else
+            if (item !=null)
+            {
+                if (item.ParentCategoryID == null) return View(viewName: "GetMenu", _anbeContext.Categories.Where(x => x.ParentCategoryID == id).ToList());
                 return View(viewName: "GetMenu", _anbeContext.Categories.Where(x => x.ParentCategoryID == item.ParentCategoryID).ToList());
+            }
+
+
+            return View(viewName: "GetMenu", item);
         }
     }
 }
