@@ -75,6 +75,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQW5iZUFkbWluXFZpZXdzXFByb2R1Y3RzXF9TdWJDYXRlZ29yaWVzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/milad/Desktop/test/anbeMarket/Anbe/Areas/AnbeAdmin/Views/Subscription/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQW5iZUFkbWluXFZpZXdzXFN1YnNjcmlwdGlvblxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/milad/Desktop/test/anbeMarket/Anbe/Areas/AnbeAdmin/Views/Support/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQW5iZUFkbWluXFZpZXdzXFN1cHBvcnRcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -139,6 +143,18 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/milad/Desktop/test/anbeMarket/Anbe/Views/Home/OnlinePayment.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxPbmxpbmVQYXltZW50LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/milad/Desktop/test/anbeMarket/Anbe/Views/Home/OnlinePaymentSharge.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxPbmxpbmVQYXltZW50U2hhcmdlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/milad/Desktop/test/anbeMarket/Anbe/Views/Home/OnlinePaymentWallet.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxPbmxpbmVQYXltZW50V2FsbGV0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/milad/Desktop/test/anbeMarket/Anbe/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -193,6 +209,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/milad/Desktop/test/anbeMarket/Anbe/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/milad/Desktop/test/anbeMarket/Anbe/Views/Wallet/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2FsbGV0XEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/milad/Desktop/test/anbeMarket/Anbe/Views/_ViewImports.cshtml]

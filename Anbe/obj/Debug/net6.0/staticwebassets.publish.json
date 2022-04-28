@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "RdEeq/JaF6E0t9VWyMF1GfI2olO8vvPmNRKM0hvD/VY=",
+  "Hash": "4S0Qnoe8ycgBAKnzVKAKArHVkUkrJkh3yq9RWTSgEbE=",
   "Source": "Anbe",
   "BasePath": "_content/Anbe",
   "Mode": "Default",
@@ -4556,6 +4556,23 @@
       "OriginalItemSpec": "wwwroot\\fonts\\Yekan.woff"
     },
     {
+      "Identity": "C:\\Users\\milad\\Desktop\\test\\anbeMarket\\Anbe\\wwwroot\\GalleryFiles\\0e82d8bd-6d7b-47c8-846f-f841ecc7ae5b.png",
+      "SourceId": "Anbe",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\milad\\Desktop\\test\\anbeMarket\\Anbe\\wwwroot\\",
+      "BasePath": "_content/Anbe",
+      "RelativePath": "GalleryFiles/0e82d8bd-6d7b-47c8-846f-f841ecc7ae5b.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\GalleryFiles\\0e82d8bd-6d7b-47c8-846f-f841ecc7ae5b.png"
+    },
+    {
       "Identity": "C:\\Users\\milad\\Desktop\\test\\anbeMarket\\Anbe\\wwwroot\\GalleryFiles\\1020315.jpg",
       "SourceId": "Anbe",
       "SourceType": "Discovered",
@@ -4673,6 +4690,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\GalleryFiles\\83eef758-3310-4477-8bf8-77a640a82217.png"
+    },
+    {
+      "Identity": "C:\\Users\\milad\\Desktop\\test\\anbeMarket\\Anbe\\wwwroot\\GalleryFiles\\95c6b97a-c856-4df2-b953-123f612978c5.jpg",
+      "SourceId": "Anbe",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\milad\\Desktop\\test\\anbeMarket\\Anbe\\wwwroot\\",
+      "BasePath": "_content/Anbe",
+      "RelativePath": "GalleryFiles/95c6b97a-c856-4df2-b953-123f612978c5.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\GalleryFiles\\95c6b97a-c856-4df2-b953-123f612978c5.jpg"
     },
     {
       "Identity": "C:\\Users\\milad\\Desktop\\test\\anbeMarket\\Anbe\\wwwroot\\GalleryFiles\\d6abe338-73b6-4591-a48f-23daf190e824.png",
@@ -18409,6 +18443,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Reports\\Report4.mrt"
+    },
+    {
+      "Identity": "C:\\Users\\milad\\Desktop\\test\\anbeMarket\\Anbe\\wwwroot\\Reports\\Report5.mrt",
+      "SourceId": "Anbe",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\milad\\Desktop\\test\\anbeMarket\\Anbe\\wwwroot\\",
+      "BasePath": "_content/Anbe",
+      "RelativePath": "Reports/Report5.mrt",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Reports\\Report5.mrt"
     },
     {
       "Identity": "C:\\Users\\milad\\Desktop\\test\\anbeMarket\\Anbe\\wwwroot\\sass\\carbon\\_alert.scss",

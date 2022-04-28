@@ -6,10 +6,13 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Text.Json;
 using System.Threading.Tasks;
+using ZarinpalSandbox;
 
 namespace Anbe.Controllers
 {
@@ -17,6 +20,7 @@ namespace Anbe.Controllers
     {
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
+
         private readonly AnbeContext anbeContext;
 
         public HomeController(AnbeContext anbeContext, SignInManager<ApplicationUser> signInManager
@@ -112,7 +116,7 @@ namespace Anbe.Controllers
                 switch (sort)
                 {
                     case 1:
-                        list = list.OrderByDescending(x=>x.ProductID);
+                        list = list.OrderByDescending(x=>x.CreateDate);
                             break;
                     case 2:
                         list = list.OrderBy(x => x.Price);
@@ -153,6 +157,130 @@ namespace Anbe.Controllers
             }
 
             return View(proudctlist);
+        }
+
+        public IActionResult OnlinePayment(int id)
+        {
+
+
+            if (HttpContext.Request.Query["Status"] != "" &&
+                HttpContext.Request.Query["Status"].ToString().ToLower() == "ok" &&
+                HttpContext.Request.Query["Authority"] != "")
+            {
+                string authority = HttpContext.Request.Query["Authority"].ToString();
+
+            
+
+
+
+                var payment = new Payment(10000);
+                var res = payment.Verification(authority).Result;
+                if (res.Status == 100)
+                {
+
+                    var product = anbeContext.Products.Where(x => x.ProductID == id).FirstOrDefault();
+                    product.CreateDate = DateTime.Now;
+                    anbeContext.Products.Update(product);
+                    anbeContext.SaveChanges();
+                    ViewBag.code = res.RefId;
+                    return View();
+                }
+
+            }
+            else
+            {
+                ViewBag.Error = "مشکلی در پرداخت رخداده است.";
+                return View();
+
+            }
+
+            return NotFound();
+        }
+
+        public IActionResult OnlinePaymentSharge(int id)
+        {
+
+
+            if (HttpContext.Request.Query["Status"] != "" &&
+                HttpContext.Request.Query["Status"].ToString().ToLower() == "ok" &&
+                HttpContext.Request.Query["Authority"] != "")
+            {
+                string authority = HttpContext.Request.Query["Authority"].ToString();
+
+
+
+
+
+                var payment = new Payment(id);
+                var res = payment.Verification(authority).Result;
+                if (res.Status == 100)
+                {
+
+                    var UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                    var UserFound = anbeContext.Users.SingleOrDefault(x => x.Id == UserId);
+                    if (UserFound == null)
+                    {
+                        return NotFound();
+                    }
+                    
+                    UserFound.LastVisitDateTime = DateTime.Now.AddMonths(1); 
+                    anbeContext.SaveChanges();
+                    ViewBag.code = res.RefId;
+                    return View();
+                }
+
+            }
+            else
+            {
+                ViewBag.Error = "مشکلی در پرداخت رخداده است.";
+                return View();
+
+            }
+
+            return NotFound();
+        }
+
+
+
+
+        public async Task<IActionResult> OnlinePaymentWallet(int id)
+        {
+            if (HttpContext.Request.Query["Status"] != "" &&
+                HttpContext.Request.Query["Status"].ToString().ToLower() == "ok" &&
+                HttpContext.Request.Query["Authority"] != "")
+            {
+                string authority = HttpContext.Request.Query["Authority"].ToString();
+
+                var order = anbeContext.wallets.Find(id);
+                if (order == null)
+                {
+                    return NotFound();
+                }
+
+
+
+                var payment = new Payment(order.Amount);
+                var res = payment.Verification(authority).Result;
+                if (res.Status == 100)
+                {
+                    order.IsPay = true;
+                    //Product product;                    
+                    anbeContext.wallets.Update(order);
+                    //foreach (var item in details)
+                    //{
+                    //    product = _context.Products.FirstOrDefault(x => x.ProductID == item.ProductId);
+                    //    product.ProductTotal -= item.Count;
+                    //    _context.Update(product);
+                    //}
+
+                    await anbeContext.SaveChangesAsync();
+                    ViewBag.code = res.RefId;
+                    return View();
+                }
+
+            }
+
+            return NotFound();
         }
         public IActionResult Test()
         {

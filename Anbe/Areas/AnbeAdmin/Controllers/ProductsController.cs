@@ -408,6 +408,35 @@ namespace Nazar1988.Areas.MyMaster.Controllers
 
 
         }
+        
+        public IActionResult PaymentA(string id)
+        {
+            if (id == null)
+            {
+                return Content("خطا آدرس وارد شده صحیح نیست");
+            }
+            string CurrentUserID = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            
+
+            var payment = new ZarinpalSandbox.Payment(10000);
+            var res = payment.PaymentRequest($"پرداخت فاکتور شماره {CurrentUserID}",
+                "https://localhost:44394/Home/OnlinePayment/" + id);
+
+
+            if (res.Result.Status == 100)
+            {
+                
+                return Redirect("https://sandbox.zarinpal.com/pg/StartPay/" + res.Result.Authority);
+            }
+            else
+            {
+                return BadRequest();
+            }
+
+
+        }
+
+
         [HttpPost]
         [AutoValidateAntiforgeryToken]
         public async Task<IActionResult> Edit(ProductViewModelE viewModel,string jojo)

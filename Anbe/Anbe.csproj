@@ -16,11 +16,13 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.1" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.3" />
     <PackageReference Include="Quartz" Version="3.3.3" />
     <PackageReference Include="ReflectionIT.Mvc.Paging" Version="6.0.1" />
     <PackageReference Include="Stimulsoft.Reports.Web.NetCore" Version="2020.2.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.3.0" />
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.16.0" />
+    <PackageReference Include="ZarinpalSandbox" Version="2.0.4" />
   </ItemGroup>
 
   <ItemGroup>

@@ -1,0 +1,18 @@
+﻿  
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_MymasterLayout.cshtml";
+}
+
+<form asp-action="index" method="post" >
+
+      <p>لطفا نسبت به شارژ خود اقدام کنید</p>
+  <input type="radio" name="money" value="1">
+  <label >اشتراک یک ماهه 30,000 تومان</label><br>
+  <input type="radio" id="css" name="money" value="2">
+  <label >اشتراک سه ماهه 50,000 تومان</label><br>
+  <input type="radio"  name="money" value="3">
+  <label for="html">اشتراک شش ماهه 150,000 تومان</label><br>
+
+    <input type="submit" value="Submit">
+    </form>

@@ -355,6 +355,8 @@ C:\Users\milad\Desktop\test\anbeMarket\Anbe\obj\Release\net6.0\PubTmp\Out\Micros
 C:\Users\milad\Desktop\test\anbeMarket\Anbe\obj\Release\net6.0\PubTmp\Out\Microsoft.IdentityModel.Protocols.dll
 C:\Users\milad\Desktop\test\anbeMarket\Anbe\obj\Release\net6.0\PubTmp\Out\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Users\milad\Desktop\test\anbeMarket\Anbe\obj\Release\net6.0\PubTmp\Out\Microsoft.IdentityModel.Tokens.dll
+C:\Users\milad\Desktop\test\anbeMarket\Anbe\obj\Release\net6.0\PubTmp\Out\Microsoft.OpenApi.dll
+C:\Users\milad\Desktop\test\anbeMarket\Anbe\obj\Release\net6.0\PubTmp\Out\Microsoft.VisualBasic.dll
 C:\Users\milad\Desktop\test\anbeMarket\Anbe\obj\Release\net6.0\PubTmp\Out\Microsoft.VisualStudio.Debugger.Contracts.dll
 C:\Users\milad\Desktop\test\anbeMarket\Anbe\obj\Release\net6.0\PubTmp\Out\Microsoft.VisualStudio.Web.CodeGeneration.dll
 C:\Users\milad\Desktop\test\anbeMarket\Anbe\obj\Release\net6.0\PubTmp\Out\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
@@ -388,6 +390,9 @@ C:\Users\milad\Desktop\test\anbeMarket\Anbe\obj\Release\net6.0\PubTmp\Out\Stimul
 C:\Users\milad\Desktop\test\anbeMarket\Anbe\obj\Release\net6.0\PubTmp\Out\Stimulsoft.Report.Web.dll
 C:\Users\milad\Desktop\test\anbeMarket\Anbe\obj\Release\net6.0\PubTmp\Out\Stimulsoft.Report.WebDesign.dll
 C:\Users\milad\Desktop\test\anbeMarket\Anbe\obj\Release\net6.0\PubTmp\Out\Stimulsoft.System.Web.dll
+C:\Users\milad\Desktop\test\anbeMarket\Anbe\obj\Release\net6.0\PubTmp\Out\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\milad\Desktop\test\anbeMarket\Anbe\obj\Release\net6.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\milad\Desktop\test\anbeMarket\Anbe\obj\Release\net6.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Users\milad\Desktop\test\anbeMarket\Anbe\obj\Release\net6.0\PubTmp\Out\System.CodeDom.dll
 C:\Users\milad\Desktop\test\anbeMarket\Anbe\obj\Release\net6.0\PubTmp\Out\System.Composition.AttributedModel.dll
 C:\Users\milad\Desktop\test\anbeMarket\Anbe\obj\Release\net6.0\PubTmp\Out\System.Composition.Convention.dll
@@ -406,6 +411,7 @@ C:\Users\milad\Desktop\test\anbeMarket\Anbe\obj\Release\net6.0\PubTmp\Out\System
 C:\Users\milad\Desktop\test\anbeMarket\Anbe\obj\Release\net6.0\PubTmp\Out\System.Security.Cryptography.ProtectedData.dll
 C:\Users\milad\Desktop\test\anbeMarket\Anbe\obj\Release\net6.0\PubTmp\Out\System.Security.Permissions.dll
 C:\Users\milad\Desktop\test\anbeMarket\Anbe\obj\Release\net6.0\PubTmp\Out\System.Windows.Extensions.dll
+C:\Users\milad\Desktop\test\anbeMarket\Anbe\obj\Release\net6.0\PubTmp\Out\ZarinpalSandbox.dll
 C:\Users\milad\Desktop\test\anbeMarket\Anbe\obj\Release\net6.0\PubTmp\Out\cs\Microsoft.CodeAnalysis.resources.dll
 C:\Users\milad\Desktop\test\anbeMarket\Anbe\obj\Release\net6.0\PubTmp\Out\de\Microsoft.CodeAnalysis.resources.dll
 C:\Users\milad\Desktop\test\anbeMarket\Anbe\obj\Release\net6.0\PubTmp\Out\es\Microsoft.CodeAnalysis.resources.dll
@@ -562,6 +568,14 @@ C:\Users\milad\Desktop\test\anbeMarket\Anbe\obj\Release\net6.0\PubTmp\Out\ru\Mic
 C:\Users\milad\Desktop\test\anbeMarket\Anbe\obj\Release\net6.0\PubTmp\Out\tr\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
 C:\Users\milad\Desktop\test\anbeMarket\Anbe\obj\Release\net6.0\PubTmp\Out\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
 C:\Users\milad\Desktop\test\anbeMarket\Anbe\obj\Release\net6.0\PubTmp\Out\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+C:\Users\milad\Desktop\test\anbeMarket\Anbe\obj\Release\net6.0\PubTmp\Out\runtimes\debian-x64\native\libuv.so
+C:\Users\milad\Desktop\test\anbeMarket\Anbe\obj\Release\net6.0\PubTmp\Out\runtimes\fedora-x64\native\libuv.so
+C:\Users\milad\Desktop\test\anbeMarket\Anbe\obj\Release\net6.0\PubTmp\Out\runtimes\opensuse-x64\native\libuv.so
+C:\Users\milad\Desktop\test\anbeMarket\Anbe\obj\Release\net6.0\PubTmp\Out\runtimes\osx\native\libuv.dylib
+C:\Users\milad\Desktop\test\anbeMarket\Anbe\obj\Release\net6.0\PubTmp\Out\runtimes\rhel-x64\native\libuv.so
+C:\Users\milad\Desktop\test\anbeMarket\Anbe\obj\Release\net6.0\PubTmp\Out\runtimes\win7-arm\native\libuv.dll
+C:\Users\milad\Desktop\test\anbeMarket\Anbe\obj\Release\net6.0\PubTmp\Out\runtimes\win7-x64\native\libuv.dll
+C:\Users\milad\Desktop\test\anbeMarket\Anbe\obj\Release\net6.0\PubTmp\Out\runtimes\win7-x86\native\libuv.dll
 C:\Users\milad\Desktop\test\anbeMarket\Anbe\obj\Release\net6.0\PubTmp\Out\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
 C:\Users\milad\Desktop\test\anbeMarket\Anbe\obj\Release\net6.0\PubTmp\Out\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
 C:\Users\milad\Desktop\test\anbeMarket\Anbe\obj\Release\net6.0\PubTmp\Out\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
